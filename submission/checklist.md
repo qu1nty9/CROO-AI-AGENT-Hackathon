@@ -8,7 +8,8 @@ Status: working checklist.
 - [ ] CAP integration implemented
 - [x] Agent is callable by other agents in mock CAP
 - [x] Settlement flow clearly documented as mock CAP
-- [ ] Public GitHub repository
+- [x] Public GitHub repository
+  - https://github.com/qu1nty9/CROO-AI-AGENT-Hackathon
 - [x] Permissive license: MIT or Apache 2.0
 - [x] README with setup instructions
 - [ ] SDK methods used documented

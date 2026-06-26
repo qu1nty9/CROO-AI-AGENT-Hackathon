@@ -123,3 +123,18 @@ Prepared the project for judge-facing review:
 - updated checklist and writeup references
 
 Current status: local evidence package is reproducible with one command. Remaining work is public/publishing work: GitHub repo, Agent Store listing, DoraHacks BUIDL, demo video, and final Kaggle writeup publication.
+
+## [2026-06-26] publishing | GitHub repository
+
+Published the project to GitHub:
+
+- https://github.com/qu1nty9/CROO-AI-AGENT-Hackathon
+
+Initial repository includes code, tests, artifacts, README, MIT license, Kaggle writeup draft, demo runbook, evidence map, and live-readiness notes.
+
+Remaining publishing tasks:
+
+- Agent Store live listing
+- DoraHacks BUIDL
+- demo video
+- final Kaggle writeup publication

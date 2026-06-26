@@ -174,11 +174,14 @@ Completed additions:
 
 Remaining external/publishing tasks:
 
-- public GitHub repository URL
 - Agent Store live listing
 - DoraHacks BUIDL
 - recorded demo video
 - published Kaggle writeup
+
+Completed publishing task:
+
+- public GitHub repository URL: https://github.com/qu1nty9/CROO-AI-AGENT-Hackathon
 
 Demo structure:
 
