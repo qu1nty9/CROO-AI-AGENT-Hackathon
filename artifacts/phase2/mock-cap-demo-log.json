@@ -1,0 +1,552 @@
+{
+  "demo_name": "proofmesh_mock_cap_lifecycle",
+  "requester_agent_id": "cap://research-requester.local",
+  "provider_agent_id": "cap://proofmesh-provider.local",
+  "service_id": "proofmesh-source-coverage-audit",
+  "lifecycle_summary": {
+    "negotiation_id": "neg_6df57e255f",
+    "order_id": "order_6e8f4424d3",
+    "delivery_id": "del_d990f61559",
+    "payment_tx_id": "0xmock1c257f163fce41c5987d5bf0",
+    "payment_block_number": 9000001,
+    "final_order_status": "completed",
+    "audit_is_verified": false,
+    "audit_overall_confidence": 0.0
+  },
+  "delivered_audit": {
+    "schema_version": "proofmesh.verification.v1",
+    "task_id": "case-contradicted-001",
+    "artifact_type": "research_report",
+    "audit_mode": "source_coverage",
+    "is_verified": false,
+    "overall_confidence": 0.0,
+    "source_coverage": {
+      "claims_total": 2,
+      "claims_supported": 0,
+      "claims_partial": 0,
+      "claims_contradicted": 2,
+      "claims_unsupported": 0,
+      "sources_total": 2
+    },
+    "claim_audits": [
+      {
+        "claim_id": "c1",
+        "claim": "ProofMesh has already completed a live CROO settlement.",
+        "status": "contradicted",
+        "confidence": 0.1,
+        "supporting_sources": [
+          {
+            "source_id": "s1",
+            "title": "Current Local Status",
+            "url": "wiki/log.md",
+            "support_score": 0.333
+          }
+        ],
+        "contradiction_sources": [
+          "s1"
+        ],
+        "notes": [
+          "Potential negation mismatch detected in overlapping source text."
+        ]
+      },
+      {
+        "claim_id": "c2",
+        "claim": "Local verification is enough to prove live CAP behavior.",
+        "status": "contradicted",
+        "confidence": 0.1,
+        "supporting_sources": [
+          {
+            "source_id": "s2",
+            "title": "Submission Discipline",
+            "url": "writeup/kaggle-writeup.md",
+            "support_score": 0.429
+          }
+        ],
+        "contradiction_sources": [
+          "s2"
+        ],
+        "notes": [
+          "Potential negation mismatch detected in overlapping source text."
+        ]
+      }
+    ],
+    "limitations": [
+      "This MVP performs transparent lexical and source-coverage checks.",
+      "It is not a guarantee of factual truth.",
+      "Semantic verification, web retrieval, and human calibration are future work."
+    ],
+    "cap_receipt": {
+      "mode": "mock_cap",
+      "settlement_status": "paid",
+      "service_id": "proofmesh-source-coverage-audit",
+      "requester_agent_id": "cap://research-requester.local",
+      "provider_agent_id": "cap://proofmesh-provider.local",
+      "negotiation_id": "neg_6df57e255f",
+      "order_id": "order_6e8f4424d3",
+      "price_croo": 0.25,
+      "payment_token": "CROO",
+      "payment_tx_id": "0xmock1c257f163fce41c5987d5bf0",
+      "payment_block_number": 9000001,
+      "note": "Mock CAP receipt for local reproducibility; not a live CROO settlement."
+    },
+    "generated_at": "2026-06-26T20:31:40.306862+00:00"
+  },
+  "network_log": {
+    "network": "mock_cap",
+    "services": {
+      "proofmesh-source-coverage-audit": {
+        "service_id": "proofmesh-source-coverage-audit",
+        "provider_agent_id": "cap://proofmesh-provider.local",
+        "price_croo": 0.25,
+        "payment_token": "CROO",
+        "delivery_window_seconds": 300
+      }
+    },
+    "negotiations": {
+      "neg_6df57e255f": {
+        "negotiation_id": "neg_6df57e255f",
+        "service_id": "proofmesh-source-coverage-audit",
+        "requester_agent_id": "cap://research-requester.local",
+        "provider_agent_id": "cap://proofmesh-provider.local",
+        "requirements": {
+          "schema_version": "proofmesh.verification.v1",
+          "task_id": "case-contradicted-001",
+          "artifact_type": "research_report",
+          "artifact_text": "ProofMesh has already completed a live CROO settlement. Local verification is enough to prove live CAP behavior.",
+          "claims": [
+            {
+              "id": "c1",
+              "text": "ProofMesh has already completed a live CROO settlement.",
+              "source_ids": [
+                "s1"
+              ]
+            },
+            {
+              "id": "c2",
+              "text": "Local verification is enough to prove live CAP behavior.",
+              "source_ids": [
+                "s2"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "id": "s1",
+              "title": "Current Local Status",
+              "url": "wiki/log.md",
+              "text": "No live CAP settlement receipt is attached yet. Current evidence is local verifier output and saved artifacts."
+            },
+            {
+              "id": "s2",
+              "title": "Submission Discipline",
+              "url": "writeup/kaggle-writeup.md",
+              "text": "The final demo must clearly label mock, staging, and live behavior. Local MVP is not live CROO settlement."
+            }
+          ],
+          "audit_mode": "source_coverage"
+        },
+        "status": "accepted",
+        "price_croo": 0.25,
+        "payment_token": "CROO",
+        "created_at": "2026-06-26T20:31:40.306647+00:00",
+        "accepted_at": "2026-06-26T20:31:40.306675+00:00",
+        "reject_reason": ""
+      }
+    },
+    "orders": {
+      "order_6e8f4424d3": {
+        "order_id": "order_6e8f4424d3",
+        "negotiation_id": "neg_6df57e255f",
+        "service_id": "proofmesh-source-coverage-audit",
+        "requester_agent_id": "cap://research-requester.local",
+        "provider_agent_id": "cap://proofmesh-provider.local",
+        "status": "completed",
+        "price_croo": 0.25,
+        "payment_token": "CROO",
+        "created_at": "2026-06-26T20:31:40.306679+00:00",
+        "paid_at": "2026-06-26T20:31:40.306699+00:00",
+        "completed_at": "2026-06-26T20:31:40.306869+00:00"
+      }
+    },
+    "deliveries": {
+      "del_d990f61559": {
+        "delivery_id": "del_d990f61559",
+        "order_id": "order_6e8f4424d3",
+        "deliverable_type": "schema",
+        "deliverable_schema": {
+          "schema_version": "proofmesh.verification.v1",
+          "task_id": "case-contradicted-001",
+          "artifact_type": "research_report",
+          "audit_mode": "source_coverage",
+          "is_verified": false,
+          "overall_confidence": 0.0,
+          "source_coverage": {
+            "claims_total": 2,
+            "claims_supported": 0,
+            "claims_partial": 0,
+            "claims_contradicted": 2,
+            "claims_unsupported": 0,
+            "sources_total": 2
+          },
+          "claim_audits": [
+            {
+              "claim_id": "c1",
+              "claim": "ProofMesh has already completed a live CROO settlement.",
+              "status": "contradicted",
+              "confidence": 0.1,
+              "supporting_sources": [
+                {
+                  "source_id": "s1",
+                  "title": "Current Local Status",
+                  "url": "wiki/log.md",
+                  "support_score": 0.333
+                }
+              ],
+              "contradiction_sources": [
+                "s1"
+              ],
+              "notes": [
+                "Potential negation mismatch detected in overlapping source text."
+              ]
+            },
+            {
+              "claim_id": "c2",
+              "claim": "Local verification is enough to prove live CAP behavior.",
+              "status": "contradicted",
+              "confidence": 0.1,
+              "supporting_sources": [
+                {
+                  "source_id": "s2",
+                  "title": "Submission Discipline",
+                  "url": "writeup/kaggle-writeup.md",
+                  "support_score": 0.429
+                }
+              ],
+              "contradiction_sources": [
+                "s2"
+              ],
+              "notes": [
+                "Potential negation mismatch detected in overlapping source text."
+              ]
+            }
+          ],
+          "limitations": [
+            "This MVP performs transparent lexical and source-coverage checks.",
+            "It is not a guarantee of factual truth.",
+            "Semantic verification, web retrieval, and human calibration are future work."
+          ],
+          "cap_receipt": {
+            "mode": "mock_cap",
+            "settlement_status": "paid",
+            "service_id": "proofmesh-source-coverage-audit",
+            "requester_agent_id": "cap://research-requester.local",
+            "provider_agent_id": "cap://proofmesh-provider.local",
+            "negotiation_id": "neg_6df57e255f",
+            "order_id": "order_6e8f4424d3",
+            "price_croo": 0.25,
+            "payment_token": "CROO",
+            "payment_tx_id": "0xmock1c257f163fce41c5987d5bf0",
+            "payment_block_number": 9000001,
+            "note": "Mock CAP receipt for local reproducibility; not a live CROO settlement."
+          },
+          "generated_at": "2026-06-26T20:31:40.306862+00:00"
+        },
+        "status": "submitted",
+        "submitted_at": "2026-06-26T20:31:40.306869+00:00"
+      }
+    },
+    "ledger": [
+      {
+        "tx_id": "0xmock1c257f163fce41c5987d5bf0",
+        "event_type": "order_paid",
+        "order_id": "order_6e8f4424d3",
+        "negotiation_id": "neg_6df57e255f",
+        "amount_croo": 0.25,
+        "payment_token": "CROO",
+        "block_number": 9000001,
+        "timestamp": "2026-06-26T20:31:40.306707+00:00"
+      },
+      {
+        "tx_id": "0xmock8b7d2a12d9024d7fb3d8be86",
+        "event_type": "order_delivered",
+        "order_id": "order_6e8f4424d3",
+        "negotiation_id": "neg_6df57e255f",
+        "amount_croo": 0.0,
+        "payment_token": "CROO",
+        "block_number": 9000002,
+        "timestamp": "2026-06-26T20:31:40.306875+00:00"
+      }
+    ],
+    "events": [
+      {
+        "event_id": "evt_1aad80391d",
+        "event_type": "service_registered",
+        "timestamp": "2026-06-26T20:31:40.306548+00:00",
+        "payload": {
+          "service_id": "proofmesh-source-coverage-audit",
+          "provider_agent_id": "cap://proofmesh-provider.local",
+          "price_croo": 0.25,
+          "payment_token": "CROO"
+        }
+      },
+      {
+        "event_id": "evt_6db84466c3",
+        "event_type": "negotiation_created",
+        "timestamp": "2026-06-26T20:31:40.306672+00:00",
+        "payload": {
+          "negotiation_id": "neg_6df57e255f",
+          "service_id": "proofmesh-source-coverage-audit",
+          "requester_agent_id": "cap://research-requester.local",
+          "provider_agent_id": "cap://proofmesh-provider.local",
+          "requirements": {
+            "schema_version": "proofmesh.verification.v1",
+            "task_id": "case-contradicted-001",
+            "artifact_type": "research_report",
+            "artifact_text": "ProofMesh has already completed a live CROO settlement. Local verification is enough to prove live CAP behavior.",
+            "claims": [
+              {
+                "id": "c1",
+                "text": "ProofMesh has already completed a live CROO settlement.",
+                "source_ids": [
+                  "s1"
+                ]
+              },
+              {
+                "id": "c2",
+                "text": "Local verification is enough to prove live CAP behavior.",
+                "source_ids": [
+                  "s2"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "id": "s1",
+                "title": "Current Local Status",
+                "url": "wiki/log.md",
+                "text": "No live CAP settlement receipt is attached yet. Current evidence is local verifier output and saved artifacts."
+              },
+              {
+                "id": "s2",
+                "title": "Submission Discipline",
+                "url": "writeup/kaggle-writeup.md",
+                "text": "The final demo must clearly label mock, staging, and live behavior. Local MVP is not live CROO settlement."
+              }
+            ],
+            "audit_mode": "source_coverage"
+          },
+          "status": "pending",
+          "price_croo": 0.25,
+          "payment_token": "CROO",
+          "created_at": "2026-06-26T20:31:40.306647+00:00",
+          "accepted_at": null,
+          "reject_reason": ""
+        }
+      },
+      {
+        "event_id": "evt_a197d2a225",
+        "event_type": "negotiation_accepted",
+        "timestamp": "2026-06-26T20:31:40.306697+00:00",
+        "payload": {
+          "negotiation": {
+            "negotiation_id": "neg_6df57e255f",
+            "service_id": "proofmesh-source-coverage-audit",
+            "requester_agent_id": "cap://research-requester.local",
+            "provider_agent_id": "cap://proofmesh-provider.local",
+            "requirements": {
+              "schema_version": "proofmesh.verification.v1",
+              "task_id": "case-contradicted-001",
+              "artifact_type": "research_report",
+              "artifact_text": "ProofMesh has already completed a live CROO settlement. Local verification is enough to prove live CAP behavior.",
+              "claims": [
+                {
+                  "id": "c1",
+                  "text": "ProofMesh has already completed a live CROO settlement.",
+                  "source_ids": [
+                    "s1"
+                  ]
+                },
+                {
+                  "id": "c2",
+                  "text": "Local verification is enough to prove live CAP behavior.",
+                  "source_ids": [
+                    "s2"
+                  ]
+                }
+              ],
+              "sources": [
+                {
+                  "id": "s1",
+                  "title": "Current Local Status",
+                  "url": "wiki/log.md",
+                  "text": "No live CAP settlement receipt is attached yet. Current evidence is local verifier output and saved artifacts."
+                },
+                {
+                  "id": "s2",
+                  "title": "Submission Discipline",
+                  "url": "writeup/kaggle-writeup.md",
+                  "text": "The final demo must clearly label mock, staging, and live behavior. Local MVP is not live CROO settlement."
+                }
+              ],
+              "audit_mode": "source_coverage"
+            },
+            "status": "accepted",
+            "price_croo": 0.25,
+            "payment_token": "CROO",
+            "created_at": "2026-06-26T20:31:40.306647+00:00",
+            "accepted_at": "2026-06-26T20:31:40.306675+00:00",
+            "reject_reason": ""
+          },
+          "order": {
+            "order_id": "order_6e8f4424d3",
+            "negotiation_id": "neg_6df57e255f",
+            "service_id": "proofmesh-source-coverage-audit",
+            "requester_agent_id": "cap://research-requester.local",
+            "provider_agent_id": "cap://proofmesh-provider.local",
+            "status": "created",
+            "price_croo": 0.25,
+            "payment_token": "CROO",
+            "created_at": "2026-06-26T20:31:40.306679+00:00",
+            "paid_at": null,
+            "completed_at": null
+          }
+        }
+      },
+      {
+        "event_id": "evt_8f08a42df5",
+        "event_type": "order_paid",
+        "timestamp": "2026-06-26T20:31:40.306716+00:00",
+        "payload": {
+          "order": {
+            "order_id": "order_6e8f4424d3",
+            "negotiation_id": "neg_6df57e255f",
+            "service_id": "proofmesh-source-coverage-audit",
+            "requester_agent_id": "cap://research-requester.local",
+            "provider_agent_id": "cap://proofmesh-provider.local",
+            "status": "paid",
+            "price_croo": 0.25,
+            "payment_token": "CROO",
+            "created_at": "2026-06-26T20:31:40.306679+00:00",
+            "paid_at": "2026-06-26T20:31:40.306699+00:00",
+            "completed_at": null
+          },
+          "ledger_entry": {
+            "tx_id": "0xmock1c257f163fce41c5987d5bf0",
+            "event_type": "order_paid",
+            "order_id": "order_6e8f4424d3",
+            "negotiation_id": "neg_6df57e255f",
+            "amount_croo": 0.25,
+            "payment_token": "CROO",
+            "block_number": 9000001,
+            "timestamp": "2026-06-26T20:31:40.306707+00:00"
+          }
+        }
+      },
+      {
+        "event_id": "evt_982d0ae36a",
+        "event_type": "order_completed",
+        "timestamp": "2026-06-26T20:31:40.306898+00:00",
+        "payload": {
+          "order": {
+            "order_id": "order_6e8f4424d3",
+            "negotiation_id": "neg_6df57e255f",
+            "service_id": "proofmesh-source-coverage-audit",
+            "requester_agent_id": "cap://research-requester.local",
+            "provider_agent_id": "cap://proofmesh-provider.local",
+            "status": "completed",
+            "price_croo": 0.25,
+            "payment_token": "CROO",
+            "created_at": "2026-06-26T20:31:40.306679+00:00",
+            "paid_at": "2026-06-26T20:31:40.306699+00:00",
+            "completed_at": "2026-06-26T20:31:40.306869+00:00"
+          },
+          "delivery": {
+            "delivery_id": "del_d990f61559",
+            "order_id": "order_6e8f4424d3",
+            "deliverable_type": "schema",
+            "deliverable_schema": {
+              "schema_version": "proofmesh.verification.v1",
+              "task_id": "case-contradicted-001",
+              "artifact_type": "research_report",
+              "audit_mode": "source_coverage",
+              "is_verified": false,
+              "overall_confidence": 0.0,
+              "source_coverage": {
+                "claims_total": 2,
+                "claims_supported": 0,
+                "claims_partial": 0,
+                "claims_contradicted": 2,
+                "claims_unsupported": 0,
+                "sources_total": 2
+              },
+              "claim_audits": [
+                {
+                  "claim_id": "c1",
+                  "claim": "ProofMesh has already completed a live CROO settlement.",
+                  "status": "contradicted",
+                  "confidence": 0.1,
+                  "supporting_sources": [
+                    {
+                      "source_id": "s1",
+                      "title": "Current Local Status",
+                      "url": "wiki/log.md",
+                      "support_score": 0.333
+                    }
+                  ],
+                  "contradiction_sources": [
+                    "s1"
+                  ],
+                  "notes": [
+                    "Potential negation mismatch detected in overlapping source text."
+                  ]
+                },
+                {
+                  "claim_id": "c2",
+                  "claim": "Local verification is enough to prove live CAP behavior.",
+                  "status": "contradicted",
+                  "confidence": 0.1,
+                  "supporting_sources": [
+                    {
+                      "source_id": "s2",
+                      "title": "Submission Discipline",
+                      "url": "writeup/kaggle-writeup.md",
+                      "support_score": 0.429
+                    }
+                  ],
+                  "contradiction_sources": [
+                    "s2"
+                  ],
+                  "notes": [
+                    "Potential negation mismatch detected in overlapping source text."
+                  ]
+                }
+              ],
+              "limitations": [
+                "This MVP performs transparent lexical and source-coverage checks.",
+                "It is not a guarantee of factual truth.",
+                "Semantic verification, web retrieval, and human calibration are future work."
+              ],
+              "cap_receipt": {
+                "mode": "mock_cap",
+                "settlement_status": "paid",
+                "service_id": "proofmesh-source-coverage-audit",
+                "requester_agent_id": "cap://research-requester.local",
+                "provider_agent_id": "cap://proofmesh-provider.local",
+                "negotiation_id": "neg_6df57e255f",
+                "order_id": "order_6e8f4424d3",
+                "price_croo": 0.25,
+                "payment_token": "CROO",
+                "payment_tx_id": "0xmock1c257f163fce41c5987d5bf0",
+                "payment_block_number": 9000001,
+                "note": "Mock CAP receipt for local reproducibility; not a live CROO settlement."
+              },
+              "generated_at": "2026-06-26T20:31:40.306862+00:00"
+            },
+            "status": "submitted",
+            "submitted_at": "2026-06-26T20:31:40.306869+00:00"
+          }
+        }
+      }
+    ]
+  }
+}

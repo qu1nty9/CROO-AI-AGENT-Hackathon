@@ -1,0 +1,84 @@
+{
+  "ready": false,
+  "checks": [
+    {
+      "name": "croo_sdk_key",
+      "ok": false,
+      "detail": "CROO_SDK_KEY is missing"
+    },
+    {
+      "name": "croo_sdk_package",
+      "ok": false,
+      "detail": "Python module 'croo' is not installed or not discoverable"
+    },
+    {
+      "name": "croo_api_url",
+      "ok": true,
+      "detail": "https://api.croo.network"
+    },
+    {
+      "name": "croo_ws_url",
+      "ok": true,
+      "detail": "wss://api.croo.network/ws"
+    },
+    {
+      "name": "service_metadata",
+      "ok": true,
+      "detail": "service_id=proofmesh-source-coverage-audit; provider_agent_id=cap://proofmesh-provider.local"
+    }
+  ],
+  "config": {
+    "mode": "local",
+    "croo_api_url": "https://api.croo.network",
+    "croo_ws_url": "wss://api.croo.network/ws",
+    "croo_sdk_key": "",
+    "service_id": "proofmesh-source-coverage-audit",
+    "provider_agent_id": "cap://proofmesh-provider.local",
+    "price_croo": 0.25,
+    "payment_token": "CROO"
+  },
+  "service_listing": {
+    "agent_name": "ProofMesh",
+    "agent_id": "cap://proofmesh-provider.local",
+    "service_id": "proofmesh-source-coverage-audit",
+    "service_name": "Source Coverage Audit",
+    "short_description": "Paid verification and provenance audit for agent-generated outputs.",
+    "tracks": [
+      "Data & Verification Agents",
+      "Research & Intelligence Agents"
+    ],
+    "price": {
+      "amount": 0.25,
+      "token": "CROO",
+      "unit": "per audit"
+    },
+    "input_schema": {
+      "schema_version": "proofmesh.verification.v1",
+      "required": [
+        "artifact_type",
+        "claims or artifact_text",
+        "sources"
+      ],
+      "audit_modes": [
+        "source_coverage"
+      ]
+    },
+    "output_schema": {
+      "schema_version": "proofmesh.verification.v1",
+      "fields": [
+        "is_verified",
+        "overall_confidence",
+        "source_coverage",
+        "claim_audits",
+        "limitations",
+        "cap_receipt"
+      ]
+    },
+    "repository": "TBD",
+    "demo_video": "TBD"
+  },
+  "next_steps": [
+    "Set CROO_SDK_KEY from the CROO Agent dashboard.",
+    "Install or vendor the current CROO Python SDK once the package name/API is confirmed."
+  ]
+}

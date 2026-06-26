@@ -1,0 +1,85 @@
+{
+  "schema_version": "proofmesh.verification.v1",
+  "task_id": "demo-research-001",
+  "artifact_type": "research_report",
+  "audit_mode": "source_coverage",
+  "is_verified": false,
+  "overall_confidence": 0.333,
+  "source_coverage": {
+    "claims_total": 3,
+    "claims_supported": 2,
+    "claims_partial": 0,
+    "claims_contradicted": 1,
+    "claims_unsupported": 0,
+    "sources_total": 3
+  },
+  "claim_audits": [
+    {
+      "claim_id": "c1",
+      "claim": "CAP lets agents discover, hire, and pay other agents on-chain.",
+      "status": "supported",
+      "confidence": 0.861,
+      "supporting_sources": [
+        {
+          "source_id": "s1",
+          "title": "Local CROO Hackathon Brief",
+          "url": "docs/CROO AI AGENT Hackathon.docx",
+          "support_score": 0.778
+        }
+      ],
+      "contradiction_sources": [],
+      "notes": [
+        "Claim has source coverage under the MVP scoring rule."
+      ]
+    },
+    {
+      "claim_id": "c2",
+      "claim": "The hackathon requires every build to include an Agent Store listing, CAP integration, open source code, a demo plus README, and a DoraHacks BUIDL.",
+      "status": "supported",
+      "confidence": 0.817,
+      "supporting_sources": [
+        {
+          "source_id": "s2",
+          "title": "Local Submission Requirements",
+          "url": "docs/CROO AI AGENT Hackathon.docx",
+          "support_score": 0.667
+        }
+      ],
+      "contradiction_sources": [],
+      "notes": [
+        "Claim has source coverage under the MVP scoring rule."
+      ]
+    },
+    {
+      "claim_id": "c3",
+      "claim": "ProofMesh has already completed a live on-chain settlement on CROO mainnet.",
+      "status": "contradicted",
+      "confidence": 0.1,
+      "supporting_sources": [
+        {
+          "source_id": "s3",
+          "title": "Current Local Status",
+          "url": "wiki/log.md",
+          "support_score": 0.25
+        }
+      ],
+      "contradiction_sources": [
+        "s3"
+      ],
+      "notes": [
+        "Potential negation mismatch detected in overlapping source text."
+      ]
+    }
+  ],
+  "limitations": [
+    "This MVP performs transparent lexical and source-coverage checks.",
+    "It is not a guarantee of factual truth.",
+    "Semantic verification, web retrieval, and human calibration are future work."
+  ],
+  "cap_receipt": {
+    "mode": "local",
+    "settlement_status": "not_settled",
+    "note": "No live CAP settlement attached to this local audit."
+  },
+  "generated_at": "2026-06-26T20:31:39.833626+00:00"
+}

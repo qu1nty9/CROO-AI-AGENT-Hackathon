@@ -1,0 +1,109 @@
+{
+  "demo_name": "proofmesh_mock_cap_batch",
+  "case_count": 3,
+  "total_mock_cost_croo": 0.75,
+  "avg_elapsed_ms": 0.299,
+  "max_elapsed_ms": 0.457,
+  "cases": [
+    {
+      "task_id": "case-supported-001",
+      "service_id": "proofmesh-source-coverage-audit",
+      "requester_agent_id": "cap://research-requester.local",
+      "provider_agent_id": "cap://proofmesh-provider.local",
+      "order_status": "completed",
+      "is_verified": true,
+      "overall_confidence": 1.0,
+      "claims_total": 2,
+      "claims_supported": 2,
+      "claims_unsupported": 0,
+      "claims_contradicted": 0,
+      "paid_amount_croo": 0.25,
+      "event_types": [
+        "service_registered",
+        "negotiation_created",
+        "negotiation_accepted",
+        "order_paid",
+        "order_completed"
+      ],
+      "ledger_event_types": [
+        "order_paid",
+        "order_delivered"
+      ],
+      "receipt_mode": "mock_cap",
+      "case_name": "supported",
+      "request_path": "examples/cases/supported_artifact.json",
+      "elapsed_ms": 0.457,
+      "negotiation_id": "neg_72cda1e5ae",
+      "order_id": "order_02f307a0ed",
+      "delivery_id": "del_902613824b",
+      "payment_tx_id": "0xmocke39297f1fa0043359db86aee"
+    },
+    {
+      "task_id": "case-unsupported-001",
+      "service_id": "proofmesh-source-coverage-audit",
+      "requester_agent_id": "cap://research-requester.local",
+      "provider_agent_id": "cap://proofmesh-provider.local",
+      "order_status": "completed",
+      "is_verified": false,
+      "overall_confidence": 0.5,
+      "claims_total": 2,
+      "claims_supported": 1,
+      "claims_unsupported": 1,
+      "claims_contradicted": 0,
+      "paid_amount_croo": 0.25,
+      "event_types": [
+        "service_registered",
+        "negotiation_created",
+        "negotiation_accepted",
+        "order_paid",
+        "order_completed"
+      ],
+      "ledger_event_types": [
+        "order_paid",
+        "order_delivered"
+      ],
+      "receipt_mode": "mock_cap",
+      "case_name": "unsupported",
+      "request_path": "examples/cases/unsupported_claim.json",
+      "elapsed_ms": 0.191,
+      "negotiation_id": "neg_e18b0df7e4",
+      "order_id": "order_4d67d521b7",
+      "delivery_id": "del_e387d7aa95",
+      "payment_tx_id": "0xmock06c1864952034ccf9ab13265"
+    },
+    {
+      "task_id": "case-contradicted-001",
+      "service_id": "proofmesh-source-coverage-audit",
+      "requester_agent_id": "cap://research-requester.local",
+      "provider_agent_id": "cap://proofmesh-provider.local",
+      "order_status": "completed",
+      "is_verified": false,
+      "overall_confidence": 0.0,
+      "claims_total": 2,
+      "claims_supported": 0,
+      "claims_unsupported": 0,
+      "claims_contradicted": 2,
+      "paid_amount_croo": 0.25,
+      "event_types": [
+        "service_registered",
+        "negotiation_created",
+        "negotiation_accepted",
+        "order_paid",
+        "order_completed"
+      ],
+      "ledger_event_types": [
+        "order_paid",
+        "order_delivered"
+      ],
+      "receipt_mode": "mock_cap",
+      "case_name": "contradicted",
+      "request_path": "examples/cases/contradicted_claim.json",
+      "elapsed_ms": 0.249,
+      "negotiation_id": "neg_7def2b8abb",
+      "order_id": "order_b856e8c51c",
+      "delivery_id": "del_1b98c9d9f6",
+      "payment_tx_id": "0xmock4311fd45022542f2a2ac192e"
+    }
+  ],
+  "limitation": "Mock CAP batch evidence only; not live CROO settlement."
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": "proofmesh.verification.v1",
+  "task_id": "case-contradicted-001",
+  "artifact_type": "research_report",
+  "audit_mode": "source_coverage",
+  "is_verified": false,
+  "overall_confidence": 0.0,
+  "source_coverage": {
+    "claims_total": 2,
+    "claims_supported": 0,
+    "claims_partial": 0,
+    "claims_contradicted": 2,
+    "claims_unsupported": 0,
+    "sources_total": 2
+  },
+  "claim_audits": [
+    {
+      "claim_id": "c1",
+      "claim": "ProofMesh has already completed a live CROO settlement.",
+      "status": "contradicted",
+      "confidence": 0.1,
+      "supporting_sources": [
+        {
+          "source_id": "s1",
+          "title": "Current Local Status",
+          "url": "wiki/log.md",
+          "support_score": 0.333
+        }
+      ],
+      "contradiction_sources": [
+        "s1"
+      ],
+      "notes": [
+        "Potential negation mismatch detected in overlapping source text."
+      ]
+    },
+    {
+      "claim_id": "c2",
+      "claim": "Local verification is enough to prove live CAP behavior.",
+      "status": "contradicted",
+      "confidence": 0.1,
+      "supporting_sources": [
+        {
+          "source_id": "s2",
+          "title": "Submission Discipline",
+          "url": "writeup/kaggle-writeup.md",
+          "support_score": 0.429
+        }
+      ],
+      "contradiction_sources": [
+        "s2"
+      ],
+      "notes": [
+        "Potential negation mismatch detected in overlapping source text."
+      ]
+    }
+  ],
+  "limitations": [
+    "This MVP performs transparent lexical and source-coverage checks.",
+    "It is not a guarantee of factual truth.",
+    "Semantic verification, web retrieval, and human calibration are future work."
+  ],
+  "cap_receipt": {
+    "mode": "local",
+    "settlement_status": "not_settled",
+    "note": "No live CAP settlement attached to this local audit."
+  },
+  "generated_at": "2026-06-26T20:31:40.181858+00:00"
+}

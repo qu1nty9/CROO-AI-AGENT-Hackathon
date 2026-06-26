@@ -1,0 +1,44 @@
+{
+  "task_id": "demo-research-001",
+  "artifact_type": "research_report",
+  "artifact_text": "CAP lets agents discover, hire, and pay other agents on-chain. ProofMesh can be hired as a verification dependency before a requester agent delivers a report to a buyer.",
+  "claims": [
+    {
+      "id": "c1",
+      "text": "CAP lets agents discover, hire, and pay other agents on-chain.",
+      "source_ids": ["s1"]
+    },
+    {
+      "id": "c2",
+      "text": "The hackathon requires every build to include an Agent Store listing, CAP integration, open source code, a demo plus README, and a DoraHacks BUIDL.",
+      "source_ids": ["s2"]
+    },
+    {
+      "id": "c3",
+      "text": "ProofMesh has already completed a live on-chain settlement on CROO mainnet.",
+      "source_ids": ["s3"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Local CROO Hackathon Brief",
+      "url": "docs/CROO AI AGENT Hackathon.docx",
+      "text": "CAP is a permissionless A2A standard that lets any Agent discover, hire, and pay any other Agent on-chain."
+    },
+    {
+      "id": "s2",
+      "title": "Local Submission Requirements",
+      "url": "docs/CROO AI AGENT Hackathon.docx",
+      "text": "Every build must be listed on CROO Agent Store, integrated with CAP, open source, include a demo plus README, and be filed on DoraHacks."
+    },
+    {
+      "id": "s3",
+      "title": "Current Local Status",
+      "url": "wiki/log.md",
+      "text": "No live CAP settlement has been attached to this local audit. Live SDK integration remains an open dependency."
+    }
+  ],
+  "audit_mode": "source_coverage"
+}
+

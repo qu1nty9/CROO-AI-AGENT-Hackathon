@@ -1,0 +1,34 @@
+{
+  "schema_version": "proofmesh.verification.v1",
+  "task_id": "case-supported-001",
+  "artifact_type": "research_report",
+  "artifact_text": "ProofMesh audits generated agent outputs before final delivery. CAP lets agents discover, hire, and pay other agents on-chain.",
+  "claims": [
+    {
+      "id": "c1",
+      "text": "ProofMesh audits generated agent outputs before final delivery.",
+      "source_ids": ["s1"]
+    },
+    {
+      "id": "c2",
+      "text": "CAP lets agents discover, hire, and pay other agents on-chain.",
+      "source_ids": ["s2"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "title": "ProofMesh Project README",
+      "url": "README.md",
+      "text": "ProofMesh is a paid, callable verification agent. Other agents can hire it to audit generated outputs, research claims, datasets, or reports before delivery."
+    },
+    {
+      "id": "s2",
+      "title": "Local CROO Hackathon Brief",
+      "url": "docs/CROO AI AGENT Hackathon.docx",
+      "text": "CAP is a permissionless A2A standard that lets any Agent discover, hire, and pay any other Agent on-chain."
+    }
+  ],
+  "audit_mode": "source_coverage"
+}
+

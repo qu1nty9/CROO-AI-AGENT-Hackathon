@@ -1,0 +1,33 @@
+{
+  "schema_version": "proofmesh.verification.v1",
+  "task_id": "case-unsupported-001",
+  "artifact_type": "research_report",
+  "artifact_text": "ProofMesh checks whether claims have source coverage, lexical support, and contradiction markers. ProofMesh guarantees factual truth for every possible claim.",
+  "claims": [
+    {
+      "id": "c1",
+      "text": "ProofMesh checks whether claims have source coverage, lexical support, and contradiction markers.",
+      "source_ids": ["s1"]
+    },
+    {
+      "id": "c2",
+      "text": "ProofMesh guarantees factual truth for every possible claim.",
+      "source_ids": ["s2"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "title": "ProofMesh MVP Limitations",
+      "url": "src/proofmesh/auditor.py",
+      "text": "The first version checks whether claims have source coverage, lexical support, and obvious local contradiction markers."
+    },
+    {
+      "id": "s2",
+      "title": "Unrelated Source",
+      "url": "wiki/concepts/project-strategy.md",
+      "text": "ProofMesh is a CAP-callable verification agent for generated outputs in agent workflows."
+    }
+  ],
+  "audit_mode": "source_coverage"
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "proofmesh.verification.v1",
+  "task_id": "case-contradicted-001",
+  "artifact_type": "research_report",
+  "artifact_text": "ProofMesh has already completed a live CROO settlement. Local verification is enough to prove live CAP behavior.",
+  "claims": [
+    {
+      "id": "c1",
+      "text": "ProofMesh has already completed a live CROO settlement.",
+      "source_ids": ["s1"]
+    },
+    {
+      "id": "c2",
+      "text": "Local verification is enough to prove live CAP behavior.",
+      "source_ids": ["s2"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Current Local Status",
+      "url": "wiki/log.md",
+      "text": "No live CAP settlement receipt is attached yet. Current evidence is local verifier output and saved artifacts."
+    },
+    {
+      "id": "s2",
+      "title": "Submission Discipline",
+      "url": "writeup/kaggle-writeup.md",
+      "text": "The final demo must clearly label mock, staging, and live behavior. Local MVP is not live CROO settlement."
+    }
+  ],
+  "audit_mode": "source_coverage"
+}
+

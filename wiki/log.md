@@ -1,0 +1,125 @@
+# Project Log
+
+## [2026-06-26] ingest | Local workspace and CROO brief
+
+Read the local folder structure, extracted the challenge brief from `docs/CROO AI AGENT Hackathon.docx`, and reviewed both reference notebooks. The workspace contains raw materials only; no git repository, package, README, tests, or executable project structure existed at the start of this session.
+
+Key finding: this is a buildathon/hackathon, not a standard leaderboard competition. Success depends on a callable CAP-integrated agent, Agent Store listing, open-source repo, demo, README, and DoraHacks submission.
+
+## [2026-06-26] ingest | LLM Wiki gist
+
+Read the linked Karpathy gist describing a persistent LLM-maintained wiki pattern. Adapted it into this workspace with immutable raw sources, maintained markdown wiki pages, index/log files, and deliverable drafts.
+
+## [2026-06-26] decision | Project direction
+
+Selected `ProofMesh` as the working direction: a verification/provenance agent that can be hired by other agents. This best aligns with the hackathon's A2A composability requirement and gives a credible path to a Kaggle writeup and a research-style paper.
+
+## [2026-06-26] implementation | Local ProofMesh MVP
+
+Added a dependency-free Python MVP under `src/proofmesh/` with a CLI, deterministic source-coverage audit, example request, and unit tests.
+
+Verification commands:
+
+- `PYTHONPATH=src python3 -m unittest discover -s tests`
+- `PYTHONPATH=src python3 -m proofmesh.cli audit examples/research_claim.json --format markdown`
+
+Result: 4 unit tests pass. The example correctly returns `is_verified: false` because it includes a claim about already-completed live settlement, while the current local status source says no live settlement receipt is attached yet.
+
+## [2026-06-26] writeup | Kaggle-first strategy
+
+Shifted the project strategy to Kaggle/DoraHacks first, arXiv later. Expanded the public writeup into a judge-facing engineering narrative, added a demo script, DoraHacks copy draft, judging rubric, and Kaggle asset plan.
+
+Saved local demo outputs:
+
+- `artifacts/demo-audit.json`
+- `artifacts/demo-audit.md`
+
+Current evidence status: local verifier and output artifacts are reproducible; CAP lifecycle evidence is the next major gap.
+
+## [2026-06-26] implementation | Phase 1 verifier closure
+
+Closed the local verifier phase for Kaggle writeup purposes:
+
+- added runtime schema validation in `src/proofmesh/schema.py`
+- response schema now includes `schema_version` and `audit_mode`
+- canonical schema version is `proofmesh.verification.v1`
+- added three canonical examples under `examples/cases/`
+- saved JSON and Markdown outputs under `artifacts/phase1/`
+- expanded unit tests from 4 to 8 cases
+
+Acceptance summaries:
+
+- supported artifact: `is_verified: true`
+- unsupported claim: `is_verified: false`
+- contradicted claim: `is_verified: false`
+
+Next major gap: mock CAP lifecycle.
+
+## [2026-06-26] implementation | Phase 2 mock CAP lifecycle
+
+Closed the mock CAP lifecycle phase for Kaggle writeup evidence:
+
+- added `src/proofmesh/cap_mock.py`
+- added `src/proofmesh/provider.py`
+- added `examples/run_mock_cap_demo.py`
+- added `examples/run_mock_cap_batch.py`
+- added lifecycle tests in `tests/test_cap_mock.py`
+- saved evidence in `artifacts/phase2/mock-cap-demo-log.json`
+- saved Markdown summary in `artifacts/phase2/mock-cap-demo-log.md`
+- saved batch summary in `artifacts/phase2/mock-cap-batch-summary.json`
+- saved batch Markdown in `artifacts/phase2/mock-cap-batch-summary.md`
+
+Lifecycle events:
+
+- `service_registered`
+- `negotiation_created`
+- `negotiation_accepted`
+- `order_paid`
+- `order_completed`
+
+Current evidence status: local verifier and mock CAP lifecycle are reproducible. Live/staging CROO integration remains pending.
+
+Phase 2 refinement:
+
+- 12 unit/lifecycle tests passing
+- all three canonical cases run through mock CAP
+- total mock cost across canonical cases: `0.75 CROO`
+- architecture draft added at `writeup/architecture.md`
+
+## [2026-06-26] implementation | Phase 3 live-ready scaffold
+
+Built the live/staging readiness layer without claiming live settlement:
+
+- added `src/proofmesh/config.py`
+- added `src/proofmesh/live_adapter.py`
+- added `deployment/agent-store-listing.json`
+- added `deployment/env.example`
+- added `deployment/live-integration-notes.md`
+- added `examples/check_live_readiness.py`
+- added `examples/run_live_dry_run.py`
+- added tests in `tests/test_live_adapter.py`
+- saved readiness report in `artifacts/phase3/live-readiness-report.json`
+- saved dry-run audit in `artifacts/phase3/live-dry-run-audit.json`
+
+Current readiness:
+
+- API URL and WS URL defaults are configured
+- service metadata is ready
+- `CROO_SDK_KEY` is missing
+- Python module `croo` is not installed or not discoverable
+- no live/staging order receipt yet
+
+Verification: 16 tests passed.
+
+## [2026-06-26] packaging | Phase 4 submission scaffolding
+
+Prepared the project for judge-facing review:
+
+- added MIT `LICENSE`
+- upgraded `README.md` into a submission-oriented quickstart
+- added `examples/run_all_evidence.py`
+- added `submission/evidence-map.md`
+- added `submission/demo-runbook.md`
+- updated checklist and writeup references
+
+Current status: local evidence package is reproducible with one command. Remaining work is public/publishing work: GitHub repo, Agent Store listing, DoraHacks BUIDL, demo video, and final Kaggle writeup publication.

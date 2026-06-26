@@ -1,0 +1,65 @@
+{
+  "schema_version": "proofmesh.verification.v1",
+  "task_id": "case-unsupported-001",
+  "artifact_type": "research_report",
+  "audit_mode": "source_coverage",
+  "is_verified": false,
+  "overall_confidence": 0.5,
+  "source_coverage": {
+    "claims_total": 2,
+    "claims_supported": 1,
+    "claims_partial": 0,
+    "claims_contradicted": 0,
+    "claims_unsupported": 1,
+    "sources_total": 2
+  },
+  "claim_audits": [
+    {
+      "claim_id": "c1",
+      "claim": "ProofMesh checks whether claims have source coverage, lexical support, and contradiction markers.",
+      "status": "supported",
+      "confidence": 0.91,
+      "supporting_sources": [
+        {
+          "source_id": "s1",
+          "title": "ProofMesh MVP Limitations",
+          "url": "src/proofmesh/auditor.py",
+          "support_score": 0.9
+        }
+      ],
+      "contradiction_sources": [],
+      "notes": [
+        "Claim has source coverage under the MVP scoring rule."
+      ]
+    },
+    {
+      "claim_id": "c2",
+      "claim": "ProofMesh guarantees factual truth for every possible claim.",
+      "status": "unsupported",
+      "confidence": 0.1,
+      "supporting_sources": [
+        {
+          "source_id": "s2",
+          "title": "Unrelated Source",
+          "url": "wiki/concepts/project-strategy.md",
+          "support_score": 0.143
+        }
+      ],
+      "contradiction_sources": [],
+      "notes": [
+        "No source reached the minimum lexical support threshold."
+      ]
+    }
+  ],
+  "limitations": [
+    "This MVP performs transparent lexical and source-coverage checks.",
+    "It is not a guarantee of factual truth.",
+    "Semantic verification, web retrieval, and human calibration are future work."
+  ],
+  "cap_receipt": {
+    "mode": "local",
+    "settlement_status": "not_settled",
+    "note": "No live CAP settlement attached to this local audit."
+  },
+  "generated_at": "2026-06-26T20:31:40.061977+00:00"
+}

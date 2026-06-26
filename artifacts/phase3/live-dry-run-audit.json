@@ -1,0 +1,154 @@
+{
+  "schema_version": "proofmesh.verification.v1",
+  "task_id": "case-supported-001",
+  "artifact_type": "research_report",
+  "audit_mode": "source_coverage",
+  "is_verified": true,
+  "overall_confidence": 1.0,
+  "source_coverage": {
+    "claims_total": 2,
+    "claims_supported": 2,
+    "claims_partial": 0,
+    "claims_contradicted": 0,
+    "claims_unsupported": 0,
+    "sources_total": 2
+  },
+  "claim_audits": [
+    {
+      "claim_id": "c1",
+      "claim": "ProofMesh audits generated agent outputs before final delivery.",
+      "status": "supported",
+      "confidence": 0.85,
+      "supporting_sources": [
+        {
+          "source_id": "s1",
+          "title": "ProofMesh Project README",
+          "url": "README.md",
+          "support_score": 0.75
+        }
+      ],
+      "contradiction_sources": [],
+      "notes": [
+        "Claim has source coverage under the MVP scoring rule."
+      ]
+    },
+    {
+      "claim_id": "c2",
+      "claim": "CAP lets agents discover, hire, and pay other agents on-chain.",
+      "status": "supported",
+      "confidence": 0.861,
+      "supporting_sources": [
+        {
+          "source_id": "s2",
+          "title": "Local CROO Hackathon Brief",
+          "url": "docs/CROO AI AGENT Hackathon.docx",
+          "support_score": 0.778
+        }
+      ],
+      "contradiction_sources": [],
+      "notes": [
+        "Claim has source coverage under the MVP scoring rule."
+      ]
+    }
+  ],
+  "limitations": [
+    "This MVP performs transparent lexical and source-coverage checks.",
+    "It is not a guarantee of factual truth.",
+    "Semantic verification, web retrieval, and human calibration are future work."
+  ],
+  "cap_receipt": {
+    "mode": "live_ready_dry_run",
+    "settlement_status": "not_submitted",
+    "service_id": "proofmesh-source-coverage-audit",
+    "provider_agent_id": "cap://proofmesh-provider.local",
+    "api_url": "https://api.croo.network",
+    "ws_url": "wss://api.croo.network/ws",
+    "readiness_ready": false,
+    "note": "Dry-run only. No live CROO order or settlement was created."
+  },
+  "generated_at": "2026-06-26T20:31:40.485458+00:00",
+  "live_readiness": {
+    "ready": false,
+    "checks": [
+      {
+        "name": "croo_sdk_key",
+        "ok": false,
+        "detail": "CROO_SDK_KEY is missing"
+      },
+      {
+        "name": "croo_sdk_package",
+        "ok": false,
+        "detail": "Python module 'croo' is not installed or not discoverable"
+      },
+      {
+        "name": "croo_api_url",
+        "ok": true,
+        "detail": "https://api.croo.network"
+      },
+      {
+        "name": "croo_ws_url",
+        "ok": true,
+        "detail": "wss://api.croo.network/ws"
+      },
+      {
+        "name": "service_metadata",
+        "ok": true,
+        "detail": "service_id=proofmesh-source-coverage-audit; provider_agent_id=cap://proofmesh-provider.local"
+      }
+    ],
+    "config": {
+      "mode": "local",
+      "croo_api_url": "https://api.croo.network",
+      "croo_ws_url": "wss://api.croo.network/ws",
+      "croo_sdk_key": "",
+      "service_id": "proofmesh-source-coverage-audit",
+      "provider_agent_id": "cap://proofmesh-provider.local",
+      "price_croo": 0.25,
+      "payment_token": "CROO"
+    },
+    "service_listing": {
+      "agent_name": "ProofMesh",
+      "agent_id": "cap://proofmesh-provider.local",
+      "service_id": "proofmesh-source-coverage-audit",
+      "service_name": "Source Coverage Audit",
+      "short_description": "Paid verification and provenance audit for agent-generated outputs.",
+      "tracks": [
+        "Data & Verification Agents",
+        "Research & Intelligence Agents"
+      ],
+      "price": {
+        "amount": 0.25,
+        "token": "CROO",
+        "unit": "per audit"
+      },
+      "input_schema": {
+        "schema_version": "proofmesh.verification.v1",
+        "required": [
+          "artifact_type",
+          "claims or artifact_text",
+          "sources"
+        ],
+        "audit_modes": [
+          "source_coverage"
+        ]
+      },
+      "output_schema": {
+        "schema_version": "proofmesh.verification.v1",
+        "fields": [
+          "is_verified",
+          "overall_confidence",
+          "source_coverage",
+          "claim_audits",
+          "limitations",
+          "cap_receipt"
+        ]
+      },
+      "repository": "TBD",
+      "demo_video": "TBD"
+    },
+    "next_steps": [
+      "Set CROO_SDK_KEY from the CROO Agent dashboard.",
+      "Install or vendor the current CROO Python SDK once the package name/API is confirmed."
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": "proofmesh.verification.v1",
+  "task_id": "case-supported-001",
+  "artifact_type": "research_report",
+  "audit_mode": "source_coverage",
+  "is_verified": true,
+  "overall_confidence": 1.0,
+  "source_coverage": {
+    "claims_total": 2,
+    "claims_supported": 2,
+    "claims_partial": 0,
+    "claims_contradicted": 0,
+    "claims_unsupported": 0,
+    "sources_total": 2
+  },
+  "claim_audits": [
+    {
+      "claim_id": "c1",
+      "claim": "ProofMesh audits generated agent outputs before final delivery.",
+      "status": "supported",
+      "confidence": 0.85,
+      "supporting_sources": [
+        {
+          "source_id": "s1",
+          "title": "ProofMesh Project README",
+          "url": "README.md",
+          "support_score": 0.75
+        }
+      ],
+      "contradiction_sources": [],
+      "notes": [
+        "Claim has source coverage under the MVP scoring rule."
+      ]
+    },
+    {
+      "claim_id": "c2",
+      "claim": "CAP lets agents discover, hire, and pay other agents on-chain.",
+      "status": "supported",
+      "confidence": 0.861,
+      "supporting_sources": [
+        {
+          "source_id": "s2",
+          "title": "Local CROO Hackathon Brief",
+          "url": "docs/CROO AI AGENT Hackathon.docx",
+          "support_score": 0.778
+        }
+      ],
+      "contradiction_sources": [],
+      "notes": [
+        "Claim has source coverage under the MVP scoring rule."
+      ]
+    }
+  ],
+  "limitations": [
+    "This MVP performs transparent lexical and source-coverage checks.",
+    "It is not a guarantee of factual truth.",
+    "Semantic verification, web retrieval, and human calibration are future work."
+  ],
+  "cap_receipt": {
+    "mode": "local",
+    "settlement_status": "not_settled",
+    "note": "No live CAP settlement attached to this local audit."
+  },
+  "generated_at": "2026-06-26T20:31:39.954100+00:00"
+}
