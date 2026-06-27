@@ -271,6 +271,7 @@ Current live readiness:
 - WS URL configured: `wss://api.croo.network/ws`
 - service metadata ready
 - CROO SDK confirmed as `croo-sdk`, importing module `croo`
+- Python CROO provider runner added at `examples/run_croo_provider.py`
 - staging readiness artifact is `Ready: true` with redacted `CROO_API_KEY`
 - blocked by missing live/staging order receipt
 

@@ -33,7 +33,7 @@ PYTHONPATH=src .venv/bin/python examples/run_all_evidence.py
 
 Expected current result:
 
-- 17 tests pass
+- 20 tests pass
 - local audit artifacts regenerate
 - Phase 1/2/3 artifacts regenerate
 - committed staging readiness is `True` when generated with `CROO_API_KEY`
@@ -97,15 +97,29 @@ For CROO live/staging setup:
 ```bash
 .venv/bin/pip install croo-sdk
 export CROO_API_KEY="croo_sk_..."
+export PROOFMESH_MODE=staging
+export PROOFMESH_PROVIDER_AGENT_ID="0xc38d5FE5125F5ce901768b26941Bac8758aCD46e"
 PYTHONPATH=src .venv/bin/python examples/check_live_readiness.py
 ```
 
 ProofMesh also accepts `CROO_SDK_KEY` as a legacy alias. Keep `Require Fund Transfer` disabled for the current service listing; ProofMesh returns a fixed-price verification report and does not transfer principal funds.
 
+Run the live/staging CROO provider without Node/npm:
+
+```bash
+PYTHONPATH=src .venv/bin/python examples/run_croo_provider.py
+```
+
+Use `--once` to process currently visible pending negotiations and paid orders, then exit:
+
+```bash
+PYTHONPATH=src .venv/bin/python examples/run_croo_provider.py --once
+```
+
 Run a live-ready dry-run audit:
 
 ```bash
-PYTHONPATH=src python3 examples/run_live_dry_run.py
+PYTHONPATH=src .venv/bin/python examples/run_live_dry_run.py
 ```
 
 Saved Phase 3 evidence:
@@ -114,6 +128,7 @@ Saved Phase 3 evidence:
 - `artifacts/phase3/live-readiness-report.md`
 - `artifacts/phase3/live-dry-run-audit.json`
 - `artifacts/phase3/live-dry-run-audit.md`
+- Live provider runner: `examples/run_croo_provider.py`
 
 ## Key Artifacts
 

@@ -16,6 +16,7 @@ Status: live-ready scaffold complete; live transaction pending service registrat
 - `artifacts/phase3/live-readiness-report.md`
 - `artifacts/phase3/live-dry-run-audit.json`
 - `artifacts/phase3/live-dry-run-audit.md`
+- `examples/run_croo_provider.py`
 
 ## Current Readiness
 
@@ -48,5 +49,6 @@ All Phase 3 artifacts must be labeled `live_ready_dry_run` until a real CROO ord
 
 1. Register or confirm `proofmesh-source-coverage-audit`.
 2. Keep `Require Fund Transfer` disabled for the current fixed-price audit service.
-3. Run one staging/live negotiation and delivery.
-4. Attach receipt, screenshot, or transaction/order ID to `artifacts/phase3/`.
+3. Start `PYTHONPATH=src .venv/bin/python examples/run_croo_provider.py`.
+4. Run one staging/live negotiation and delivery.
+5. Attach receipt, screenshot, or transaction/order ID to `artifacts/phase3/`.

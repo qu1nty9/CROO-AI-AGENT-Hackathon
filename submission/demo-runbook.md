@@ -76,7 +76,7 @@ Show:
 Command:
 
 ```bash
-PYTHONPATH=src python3 examples/check_live_readiness.py
+PYTHONPATH=src .venv/bin/python examples/check_live_readiness.py
 ```
 
 Show:
@@ -90,6 +90,14 @@ Show:
 Say clearly:
 
 This is live-ready dry-run evidence, not live settlement.
+
+Optional provider command for staging:
+
+```bash
+PYTHONPATH=src .venv/bin/python examples/run_croo_provider.py
+```
+
+This replaces the CROO TypeScript sample when `npx ts-node` cannot download dependencies.
 
 ## Segment 6: Close
 

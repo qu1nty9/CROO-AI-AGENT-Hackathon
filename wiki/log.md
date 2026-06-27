@@ -135,6 +135,20 @@ Generated the Phase 3 readiness report with CROO staging environment variables:
 
 Current readiness artifact is `Ready: true`. The remaining live/staging gap is an actual CROO negotiation/order/delivery receipt.
 
+## [2026-06-27] implementation | Python CROO provider runner
+
+Added a Python live/staging provider runner to avoid reliance on the CROO TypeScript sample when `npx ts-node` cannot download dependencies.
+
+Added:
+
+- `src/proofmesh/croo_provider.py`
+- `examples/run_croo_provider.py`
+- `tests/test_croo_provider.py`
+
+The runner uses the installed `croo-sdk` package, accepts pending negotiations for `proofmesh-source-coverage-audit`, delivers ProofMesh JSON audits for paid orders, and keeps `Require Fund Transfer` guarded because the current service should not transfer principal funds.
+
+Verification: 20 tests passed.
+
 ## [2026-06-26] packaging | Phase 4 submission scaffolding
 
 Prepared the project for judge-facing review:

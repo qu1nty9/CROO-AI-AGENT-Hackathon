@@ -50,7 +50,7 @@ Dry-run audit:
 
 Tests:
 
-- 17 tests pass after the 2026-06-27 CROO SDK key-alias update
+- 20 tests pass after the 2026-06-27 CROO provider runner update
 
 ## Interpretation
 

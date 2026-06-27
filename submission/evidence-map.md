@@ -61,7 +61,7 @@ PYTHONPATH=src .venv/bin/python examples/run_all_evidence.py
 
 Expected current test result:
 
-- 17 tests pass
+- 20 tests pass
 
 ## Non-Claims
 

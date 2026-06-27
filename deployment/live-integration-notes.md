@@ -53,6 +53,16 @@ Run live-ready dry-run audit:
 PYTHONPATH=src .venv/bin/python examples/run_live_dry_run.py
 ```
 
+Run the CROO provider:
+
+```bash
+export PROOFMESH_MODE=staging
+export PROOFMESH_PROVIDER_AGENT_ID="0xc38d5FE5125F5ce901768b26941Bac8758aCD46e"
+PYTHONPATH=src .venv/bin/python examples/run_croo_provider.py
+```
+
+If `npx ts-node examples/provider.ts` fails because npm cannot download `ts-node`, use the Python provider above. It uses the installed `croo-sdk` package directly.
+
 ## Important Submission Rule
 
 Until a real CROO order or official staging transaction exists, all Phase 3 artifacts must be labeled as `live_ready_dry_run`, not live settlement.
