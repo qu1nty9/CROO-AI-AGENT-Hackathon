@@ -16,6 +16,7 @@ from .config import ProofMeshConfig
 
 
 CROO_KEY_LABEL = "CROO_API_KEY/CROO_SDK_KEY"
+PROOFMESH_REPOSITORY_URL = "https://github.com/qu1nty9/CROO-AI-AGENT-Hackathon"
 
 
 @dataclass(frozen=True)
@@ -81,7 +82,7 @@ class LiveCROOAdapter:
                     "cap_receipt",
                 ],
             },
-            "repository": "TBD",
+            "repository": PROOFMESH_REPOSITORY_URL,
             "demo_video": "TBD",
         }
 

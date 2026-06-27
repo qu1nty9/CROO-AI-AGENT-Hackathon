@@ -125,6 +125,16 @@ Findings:
 
 Remaining live blocker: register the service in CROO, run one staging/live order, and attach the resulting order/transaction receipt.
 
+## [2026-06-27] integration | Staging readiness confirmed
+
+Generated the Phase 3 readiness report with CROO staging environment variables:
+
+- `PROOFMESH_MODE=staging`
+- `PROOFMESH_PROVIDER_AGENT_ID=0xc38d5FE5125F5ce901768b26941Bac8758aCD46e`
+- `CROO_API_KEY` present and redacted in the saved artifact
+
+Current readiness artifact is `Ready: true`. The remaining live/staging gap is an actual CROO negotiation/order/delivery receipt.
+
 ## [2026-06-26] packaging | Phase 4 submission scaffolding
 
 Prepared the project for judge-facing review:

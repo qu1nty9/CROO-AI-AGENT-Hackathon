@@ -1,10 +1,10 @@
 {
-  "ready": false,
+  "ready": true,
   "checks": [
     {
       "name": "croo_sdk_key",
-      "ok": false,
-      "detail": "CROO_API_KEY/CROO_SDK_KEY is missing"
+      "ok": true,
+      "detail": "CROO_API_KEY/CROO_SDK_KEY is set"
     },
     {
       "name": "croo_sdk_package",
@@ -24,22 +24,22 @@
     {
       "name": "service_metadata",
       "ok": true,
-      "detail": "service_id=proofmesh-source-coverage-audit; provider_agent_id=cap://proofmesh-provider.local"
+      "detail": "service_id=proofmesh-source-coverage-audit; provider_agent_id=0xc38d5FE5125F5ce901768b26941Bac8758aCD46e"
     }
   ],
   "config": {
-    "mode": "local",
+    "mode": "staging",
     "croo_api_url": "https://api.croo.network",
     "croo_ws_url": "wss://api.croo.network/ws",
-    "croo_sdk_key": "",
+    "croo_sdk_key": "***redacted***",
     "service_id": "proofmesh-source-coverage-audit",
-    "provider_agent_id": "cap://proofmesh-provider.local",
+    "provider_agent_id": "0xc38d5FE5125F5ce901768b26941Bac8758aCD46e",
     "price_croo": 0.25,
     "payment_token": "CROO"
   },
   "service_listing": {
     "agent_name": "ProofMesh",
-    "agent_id": "cap://proofmesh-provider.local",
+    "agent_id": "0xc38d5FE5125F5ce901768b26941Bac8758aCD46e",
     "service_id": "proofmesh-source-coverage-audit",
     "service_name": "Source Coverage Audit",
     "short_description": "Paid verification and provenance audit for agent-generated outputs.",
@@ -74,10 +74,10 @@
         "cap_receipt"
       ]
     },
-    "repository": "TBD",
+    "repository": "https://github.com/qu1nty9/CROO-AI-AGENT-Hackathon",
     "demo_video": "TBD"
   },
   "next_steps": [
-    "Set CROO_API_KEY from the CROO Agent dashboard; CROO_SDK_KEY is accepted as a legacy alias."
+    "Run a staging/live negotiation and attach the transaction receipt to artifacts."
   ]
 }

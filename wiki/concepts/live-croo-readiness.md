@@ -19,17 +19,18 @@ Status: live-ready scaffold complete; live transaction pending service registrat
 
 ## Current Readiness
 
-Ready: false.
+Ready: true for the maintained staging artifact generated with `CROO_API_KEY`.
 
 Passing checks:
 
+- `croo_sdk_key`
+- `croo_sdk_package`
 - `croo_api_url`
 - `croo_ws_url`
 - `service_metadata`
 
 Blocking checks:
 
-- `CROO_API_KEY`/`CROO_SDK_KEY` is missing in the public artifact environment
 - no live/staging order receipt has been attached yet
 
 Resolved checks:
@@ -45,10 +46,7 @@ All Phase 3 artifacts must be labeled `live_ready_dry_run` until a real CROO ord
 
 ## Next Live Steps
 
-1. Get CROO dashboard access.
-2. Install `croo-sdk` in `.venv`.
-3. Set `CROO_API_KEY`.
-4. Register `proofmesh-source-coverage-audit`.
-5. Keep `Require Fund Transfer` disabled for the current fixed-price audit service.
-6. Run one staging/live negotiation and delivery.
-7. Attach receipt, screenshot, or transaction/order ID to `artifacts/phase3/`.
+1. Register or confirm `proofmesh-source-coverage-audit`.
+2. Keep `Require Fund Transfer` disabled for the current fixed-price audit service.
+3. Run one staging/live negotiation and delivery.
+4. Attach receipt, screenshot, or transaction/order ID to `artifacts/phase3/`.

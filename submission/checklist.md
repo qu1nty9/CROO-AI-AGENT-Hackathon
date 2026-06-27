@@ -61,5 +61,4 @@ Status: working checklist.
 
 ## Current Live Blockers
 
-- public artifacts do not include `CROO_API_KEY`, by design
 - no live/staging order receipt yet

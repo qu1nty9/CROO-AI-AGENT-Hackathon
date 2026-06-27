@@ -36,7 +36,8 @@ Expected current result:
 - 17 tests pass
 - local audit artifacts regenerate
 - Phase 1/2/3 artifacts regenerate
-- public live readiness remains `False` until `CROO_API_KEY` is set
+- committed staging readiness is `True` when generated with `CROO_API_KEY`
+- third-party reruns without `CROO_API_KEY` will show the key check as missing
 - live settlement remains a dry run until a staging/live order receipt is attached
 
 Run the local deterministic verifier:

@@ -1,7 +1,7 @@
 # ProofMesh CROO Live Readiness
 
-- Ready: `False`
-- Mode: `local`
+- Ready: `True`
+- Mode: `staging`
 - API URL: `https://api.croo.network`
 - WS URL: `wss://api.croo.network/ws`
 - Service ID: `proofmesh-source-coverage-audit`
@@ -10,15 +10,15 @@
 
 | Check | OK | Detail |
 | --- | --- | --- |
-| croo_sdk_key | False | CROO_API_KEY/CROO_SDK_KEY is missing |
+| croo_sdk_key | True | CROO_API_KEY/CROO_SDK_KEY is set |
 | croo_sdk_package | True | Python module 'croo' is importable |
 | croo_api_url | True | https://api.croo.network |
 | croo_ws_url | True | wss://api.croo.network/ws |
-| service_metadata | True | service_id=proofmesh-source-coverage-audit; provider_agent_id=cap://proofmesh-provider.local |
+| service_metadata | True | service_id=proofmesh-source-coverage-audit; provider_agent_id=0xc38d5FE5125F5ce901768b26941Bac8758aCD46e |
 
 ## Next Steps
 
-- Set CROO_API_KEY from the CROO Agent dashboard; CROO_SDK_KEY is accepted as a legacy alias.
+- Run a staging/live negotiation and attach the transaction receipt to artifacts.
 
 ## Service Listing
 
