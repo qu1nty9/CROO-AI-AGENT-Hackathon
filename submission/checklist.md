@@ -56,11 +56,10 @@ Status: working checklist.
 - Mock CAP batch Markdown: `artifacts/phase2/mock-cap-batch-summary.md`
 - Live readiness report: `artifacts/phase3/live-readiness-report.json`
 - Live dry-run audit: `artifacts/phase3/live-dry-run-audit.json`
-- Tests: `PYTHONPATH=src python3 -m unittest discover -s tests`
-- All evidence: `PYTHONPATH=src python3 examples/run_all_evidence.py`
+- Tests: `PYTHONPATH=src .venv/bin/python -m unittest discover -s tests`
+- All evidence: `PYTHONPATH=src .venv/bin/python examples/run_all_evidence.py`
 
 ## Current Live Blockers
 
-- `CROO_SDK_KEY` is missing
-- current CROO Python SDK package/import name is not confirmed locally
+- public artifacts do not include `CROO_API_KEY`, by design
 - no live/staging order receipt yet

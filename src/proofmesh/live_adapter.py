@@ -15,6 +15,9 @@ from .auditor import audit_request
 from .config import ProofMeshConfig
 
 
+CROO_KEY_LABEL = "CROO_API_KEY/CROO_SDK_KEY"
+
+
 @dataclass(frozen=True)
 class ReadinessCheck:
     name: str
@@ -88,7 +91,7 @@ class LiveCROOAdapter:
             ReadinessCheck(
                 "croo_sdk_key",
                 bool(self.config.croo_sdk_key),
-                "CROO_SDK_KEY is set" if self.config.croo_sdk_key else "CROO_SDK_KEY is missing",
+                f"{CROO_KEY_LABEL} is set" if self.config.croo_sdk_key else f"{CROO_KEY_LABEL} is missing",
             ),
             ReadinessCheck(
                 "croo_sdk_package",
@@ -116,9 +119,9 @@ class LiveCROOAdapter:
         ready = all(check.ok for check in checks)
         next_steps = []
         if not self.config.croo_sdk_key:
-            next_steps.append("Set CROO_SDK_KEY from the CROO Agent dashboard.")
+            next_steps.append("Set CROO_API_KEY from the CROO Agent dashboard; CROO_SDK_KEY is accepted as a legacy alias.")
         if not sdk_available:
-            next_steps.append("Install or vendor the current CROO Python SDK once the package name/API is confirmed.")
+            next_steps.append("Install the current CROO Python SDK with `pip install croo-sdk`.")
         if ready:
             next_steps.append("Run a staging/live negotiation and attach the transaction receipt to artifacts.")
         return ReadinessReport(
@@ -147,4 +150,3 @@ class LiveCROOAdapter:
         audit = audit_request(payload)
         audit["live_readiness"] = report.to_dict()
         return audit
-

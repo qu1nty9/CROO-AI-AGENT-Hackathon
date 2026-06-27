@@ -105,11 +105,25 @@ Current readiness:
 
 - API URL and WS URL defaults are configured
 - service metadata is ready
-- `CROO_SDK_KEY` is missing
+- `CROO_API_KEY`/`CROO_SDK_KEY` is missing
 - Python module `croo` is not installed or not discoverable
 - no live/staging order receipt yet
 
 Verification: 16 tests passed.
+
+## [2026-06-27] integration | CROO SDK alignment
+
+Aligned ProofMesh with the CROO setup instruction that uses `pip install croo-sdk` and `CROO_API_KEY`.
+
+Findings:
+
+- `croo-sdk==0.2.1` installs successfully in `.venv`.
+- the package imports as Python module `croo`.
+- the SDK exposes `AgentClient`, `Config`, negotiation/order request types, delivery request types, and WebSocket events.
+- ProofMesh now accepts `CROO_API_KEY` as the official credential variable and keeps `CROO_SDK_KEY` as a legacy alias.
+- the current ProofMesh service should keep `Require Fund Transfer` disabled because it delivers a fixed-price verification report, not a principal-fund transfer flow.
+
+Remaining live blocker: register the service in CROO, run one staging/live order, and attach the resulting order/transaction receipt.
 
 ## [2026-06-26] packaging | Phase 4 submission scaffolding
 

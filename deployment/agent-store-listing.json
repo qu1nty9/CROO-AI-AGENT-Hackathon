@@ -14,6 +14,8 @@
     "token": "CROO",
     "unit": "per audit"
   },
+  "require_fund_transfer": false,
+  "sla": "15 minutes",
   "input_schema": {
     "schema_version": "proofmesh.verification.v1",
     "artifact_type": "string",

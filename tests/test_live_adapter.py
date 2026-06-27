@@ -6,11 +6,16 @@ from proofmesh.live_adapter import LiveCROOAdapter
 
 class LiveAdapterTest(unittest.TestCase):
     def test_config_loads_defaults_and_redacts_key(self):
-        config = load_config({"CROO_SDK_KEY": "secret-key"})
+        config = load_config({"CROO_API_KEY": "secret-key"})
 
         self.assertEqual(config.croo_api_url, "https://api.croo.network")
         self.assertEqual(config.croo_ws_url, "wss://api.croo.network/ws")
         self.assertEqual(config.to_dict()["croo_sdk_key"], "***redacted***")
+
+    def test_config_accepts_legacy_sdk_key_alias(self):
+        config = load_config({"CROO_SDK_KEY": "legacy-secret-key"})
+
+        self.assertEqual(config.croo_sdk_key, "legacy-secret-key")
 
     def test_readiness_reports_missing_credentials(self):
         config = load_config({})
@@ -19,6 +24,7 @@ class LiveAdapterTest(unittest.TestCase):
 
         self.assertFalse(report.ready)
         self.assertFalse(checks["croo_sdk_key"].ok)
+        self.assertIn("CROO_API_KEY", checks["croo_sdk_key"].detail)
         self.assertIn("CROO_SDK_KEY", checks["croo_sdk_key"].detail)
         self.assertTrue(checks["croo_api_url"].ok)
         self.assertTrue(checks["croo_ws_url"].ok)
@@ -60,4 +66,3 @@ class LiveAdapterTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

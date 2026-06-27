@@ -56,12 +56,12 @@ The local verifier, mock CAP lifecycle, batch evidence, and live-ready dry run c
 Command:
 
 ```bash
-PYTHONPATH=src python3 examples/run_all_evidence.py
+PYTHONPATH=src .venv/bin/python examples/run_all_evidence.py
 ```
 
 Expected current test result:
 
-- 16 tests pass
+- 17 tests pass
 
 ## Non-Claims
 
@@ -71,4 +71,3 @@ These are explicitly not claimed yet:
 - live Agent Store listing
 - calibrated truth probability
 - clinical or regulated-domain readiness
-

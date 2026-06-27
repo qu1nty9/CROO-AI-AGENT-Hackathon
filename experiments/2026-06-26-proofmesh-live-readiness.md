@@ -33,8 +33,14 @@ Passing checks:
 
 Blocking checks:
 
-- `CROO_SDK_KEY` is missing
-- Python module `croo` is not installed or not discoverable
+- `CROO_API_KEY`/`CROO_SDK_KEY` is missing in the public artifact environment
+- no live/staging order receipt has been attached yet
+
+Follow-up on 2026-06-27:
+
+- installed `croo-sdk==0.2.1` in `.venv`
+- confirmed the Python module imports as `croo`
+- updated ProofMesh to accept `CROO_API_KEY` and keep `CROO_SDK_KEY` as a compatibility alias
 
 Dry-run audit:
 
@@ -44,7 +50,7 @@ Dry-run audit:
 
 Tests:
 
-- 16 tests passed
+- 17 tests pass after the 2026-06-27 CROO SDK key-alias update
 
 ## Interpretation
 
@@ -53,4 +59,3 @@ The project is ready for live integration from a code and metadata standpoint. T
 ## Submission Discipline
 
 Do not describe Phase 3 artifacts as live settlement. The correct label is `live-ready dry run` until a real CROO order or official staging transaction is attached.
-

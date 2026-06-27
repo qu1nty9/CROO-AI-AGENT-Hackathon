@@ -4,12 +4,12 @@
     {
       "name": "croo_sdk_key",
       "ok": false,
-      "detail": "CROO_SDK_KEY is missing"
+      "detail": "CROO_API_KEY/CROO_SDK_KEY is missing"
     },
     {
       "name": "croo_sdk_package",
-      "ok": false,
-      "detail": "Python module 'croo' is not installed or not discoverable"
+      "ok": true,
+      "detail": "Python module 'croo' is importable"
     },
     {
       "name": "croo_api_url",
@@ -78,7 +78,6 @@
     "demo_video": "TBD"
   },
   "next_steps": [
-    "Set CROO_SDK_KEY from the CROO Agent dashboard.",
-    "Install or vendor the current CROO Python SDK once the package name/API is confirmed."
+    "Set CROO_API_KEY from the CROO Agent dashboard; CROO_SDK_KEY is accepted as a legacy alias."
   ]
 }

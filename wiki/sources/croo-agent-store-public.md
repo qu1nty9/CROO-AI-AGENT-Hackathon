@@ -33,6 +33,5 @@ During this pass, public SDK/API documentation was not discoverable from the ava
 
 - CROO dashboard access
 - SDK key
-- current SDK package/import name
+- current live service registration fields and production/staging order behavior
 - confirmed order negotiation and delivery method names
-

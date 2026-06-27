@@ -135,7 +135,7 @@ def main() -> int:
         print("+ " + " ".join(command), flush=True)
         subprocess.run(command, cwd=ROOT, env=env, check=True)
     print("\nEvidence regeneration complete.")
-    print("Live/staging readiness remains a dry run unless CROO credentials and SDK are configured.")
+    print("Live/staging settlement remains a dry run unless a real CROO order receipt is attached.")
     return 0
 
 

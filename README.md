@@ -12,7 +12,8 @@ Repository: https://github.com/qu1nty9/CROO-AI-AGENT-Hackathon
 - Mock CAP requester/provider lifecycle: implemented
 - Batch evidence for supported/unsupported/contradicted cases: implemented
 - Live/staging CROO readiness scaffold: implemented
-- Live CROO settlement: pending `CROO_SDK_KEY` and confirmed current SDK/API
+- CROO Python SDK: package confirmed as `croo-sdk`, importing module `croo`
+- Live CROO settlement: pending registered service and staging/live order receipt
 - Agent Store listing: metadata prepared, live listing pending
 
 ## Recommended Hackathon Tracks
@@ -25,15 +26,18 @@ Repository: https://github.com/qu1nty9/CROO-AI-AGENT-Hackathon
 Run all local evidence generation and tests:
 
 ```bash
-PYTHONPATH=src python3 examples/run_all_evidence.py
+python3 -m venv .venv
+.venv/bin/pip install croo-sdk
+PYTHONPATH=src .venv/bin/python examples/run_all_evidence.py
 ```
 
 Expected current result:
 
-- 16 tests pass
+- 17 tests pass
 - local audit artifacts regenerate
 - Phase 1/2/3 artifacts regenerate
-- live readiness remains `False` until CROO credentials and SDK are configured
+- public live readiness remains `False` until `CROO_API_KEY` is set
+- live settlement remains a dry run until a staging/live order receipt is attached
 
 Run the local deterministic verifier:
 
@@ -44,7 +48,7 @@ PYTHONPATH=src python3 -m proofmesh.cli audit examples/research_claim.json --for
 Run tests:
 
 ```bash
-PYTHONPATH=src python3 -m unittest discover -s tests
+PYTHONPATH=src .venv/bin/python -m unittest discover -s tests
 ```
 
 Expected current behavior: the example report is not fully verified, because one claim says a live CROO settlement already happened while the local status source says no live settlement receipt exists yet.
@@ -86,6 +90,16 @@ Check Phase 3 live/staging readiness:
 ```bash
 PYTHONPATH=src python3 examples/check_live_readiness.py
 ```
+
+For CROO live/staging setup:
+
+```bash
+.venv/bin/pip install croo-sdk
+export CROO_API_KEY="croo_sk_..."
+PYTHONPATH=src .venv/bin/python examples/check_live_readiness.py
+```
+
+ProofMesh also accepts `CROO_SDK_KEY` as a legacy alias. Keep `Require Fund Transfer` disabled for the current service listing; ProofMesh returns a fixed-price verification report and does not transfer principal funds.
 
 Run a live-ready dry-run audit:
 

@@ -7,7 +7,7 @@ Target: 4-5 minute demo video.
 From the repository root:
 
 ```bash
-PYTHONPATH=src python3 examples/run_all_evidence.py
+PYTHONPATH=src .venv/bin/python examples/run_all_evidence.py
 ```
 
 This regenerates:
@@ -83,8 +83,9 @@ Show:
 
 - `artifacts/phase3/live-readiness-report.md`
 - service metadata ready
-- missing `CROO_SDK_KEY`
-- SDK package not confirmed locally
+- SDK package confirmed as `croo-sdk` / Python module `croo`
+- `CROO_API_KEY` required for a local live/staging run
+- no live/staging order receipt attached yet
 
 Say clearly:
 
@@ -100,4 +101,3 @@ Show:
 Close:
 
 ProofMesh demonstrates a reusable paid verification dependency for agent commerce. The local and mock evidence is complete; live CROO settlement is the remaining external integration step.
-

@@ -14,9 +14,13 @@ authors = [
 ]
 dependencies = []
 
+[project.optional-dependencies]
+live = [
+  "croo-sdk>=0.2.1"
+]
+
 [project.scripts]
 proofmesh = "proofmesh.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-

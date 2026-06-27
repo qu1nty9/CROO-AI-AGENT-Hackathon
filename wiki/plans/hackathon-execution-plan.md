@@ -118,7 +118,7 @@ Status: live-ready scaffold complete; live/staging transaction pending credentia
 
 Tasks:
 
-- verify current CROO SDK package and methods from official documentation
+- verify current CROO SDK methods against the installed `croo-sdk` package
 - obtain SDK key and Agent Store credentials
 - register service metadata
 - map local schemas to SDK request/response fields
@@ -142,8 +142,7 @@ Completed additions:
 
 Current blockers:
 
-- missing `CROO_SDK_KEY`
-- Python module `croo` not installed or not discoverable
+- no committed public `CROO_API_KEY`, by design
 - no live/staging receipt yet
 
 ## Phase 4: Demo And Submission

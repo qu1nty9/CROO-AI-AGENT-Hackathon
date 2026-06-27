@@ -9,6 +9,9 @@ from typing import Mapping
 from .provider import PROOFMESH_SERVICE_ID
 
 
+CROO_KEY_ENV_VARS = ("CROO_API_KEY", "CROO_SDK_KEY")
+
+
 @dataclass(frozen=True)
 class ProofMeshConfig:
     mode: str
@@ -29,14 +32,14 @@ class ProofMeshConfig:
 
 def load_config(environ: Mapping[str, str] | None = None) -> ProofMeshConfig:
     env = environ or os.environ
+    croo_sdk_key = next((env[name] for name in CROO_KEY_ENV_VARS if env.get(name)), "")
     return ProofMeshConfig(
         mode=env.get("PROOFMESH_MODE", "local"),
         croo_api_url=env.get("CROO_API_URL", "https://api.croo.network"),
         croo_ws_url=env.get("CROO_WS_URL", "wss://api.croo.network/ws"),
-        croo_sdk_key=env.get("CROO_SDK_KEY", ""),
+        croo_sdk_key=croo_sdk_key,
         service_id=env.get("PROOFMESH_SERVICE_ID", PROOFMESH_SERVICE_ID),
         provider_agent_id=env.get("PROOFMESH_PROVIDER_AGENT_ID", "cap://proofmesh-provider.local"),
         price_croo=float(env.get("PROOFMESH_PRICE_CROO", "0.25")),
         payment_token=env.get("PROOFMESH_PAYMENT_TOKEN", "CROO"),
     )
-

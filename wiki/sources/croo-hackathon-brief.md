@@ -47,7 +47,6 @@ This is not a typical Kaggle tabular competition. There is no local evidence of 
 
 ## Open Questions
 
-- Current CROO SDK package name, API surface, and documentation need verification before live integration.
+- CROO SDK package name has been locally confirmed as `croo-sdk`, importing Python module `croo`; live integration still needs a registered service and staging/live order receipt.
 - Current Agent Store registration flow and required metadata need verification.
 - Current DoraHacks deadline and exact judging criteria should be checked from official pages before submission.
-

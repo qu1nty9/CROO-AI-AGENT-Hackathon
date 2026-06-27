@@ -205,7 +205,7 @@ PYTHONPATH=src python3 -m proofmesh.cli audit examples/research_claim.json --for
 Regenerate all local evidence:
 
 ```bash
-PYTHONPATH=src python3 examples/run_all_evidence.py
+PYTHONPATH=src .venv/bin/python examples/run_all_evidence.py
 ```
 
 Run tests:
@@ -270,8 +270,9 @@ Current live readiness:
 - API URL configured: `https://api.croo.network`
 - WS URL configured: `wss://api.croo.network/ws`
 - service metadata ready
-- blocked by missing `CROO_SDK_KEY`
-- blocked by unconfirmed/uninstalled Python `croo` SDK package
+- CROO SDK confirmed as `croo-sdk`, importing module `croo`
+- public artifact environment omits `CROO_API_KEY`, by design
+- blocked by missing live/staging order receipt
 
 ## Validation
 

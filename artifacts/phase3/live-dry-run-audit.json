@@ -66,19 +66,19 @@
     "readiness_ready": false,
     "note": "Dry-run only. No live CROO order or settlement was created."
   },
-  "generated_at": "2026-06-26T20:31:40.485458+00:00",
+  "generated_at": "2026-06-27T11:37:57.097671+00:00",
   "live_readiness": {
     "ready": false,
     "checks": [
       {
         "name": "croo_sdk_key",
         "ok": false,
-        "detail": "CROO_SDK_KEY is missing"
+        "detail": "CROO_API_KEY/CROO_SDK_KEY is missing"
       },
       {
         "name": "croo_sdk_package",
-        "ok": false,
-        "detail": "Python module 'croo' is not installed or not discoverable"
+        "ok": true,
+        "detail": "Python module 'croo' is importable"
       },
       {
         "name": "croo_api_url",
@@ -147,8 +147,7 @@
       "demo_video": "TBD"
     },
     "next_steps": [
-      "Set CROO_SDK_KEY from the CROO Agent dashboard.",
-      "Install or vendor the current CROO Python SDK once the package name/API is confirmed."
+      "Set CROO_API_KEY from the CROO Agent dashboard; CROO_SDK_KEY is accepted as a legacy alias."
     ]
   }
 }
