@@ -1,6 +1,6 @@
 # ProofMesh Wiki Index
 
-Last updated: 2026-06-26
+Last updated: 2026-06-30
 
 ## Overview
 
@@ -20,6 +20,7 @@ This wiki maintains the working knowledge base for the CROO AI Agent Hackathon p
 - [ProofMesh Schema](concepts/proofmesh-schema.md) - request/response schema and Phase 1 verification rule.
 - [Mock CAP Lifecycle](concepts/mock-cap-lifecycle.md) - local requester/provider/payment/delivery evidence.
 - [Live CROO Readiness](concepts/live-croo-readiness.md) - live/staging adapter status and blockers.
+- [Benchmark Validation](concepts/benchmark-validation.md) - deterministic mini benchmark and interpretation.
 
 ## Plans
 

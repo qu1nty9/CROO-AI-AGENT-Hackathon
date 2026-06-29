@@ -157,6 +157,20 @@ Added `artifacts/phase3/croo-purchase-attempt.md` and `.json` to document this a
 
 Submission language should now say: ProofMesh is staging-ready with a documented purchase attempt blocked by wallet funding; live CROO settlement is not claimed.
 
+## [2026-06-30] validation | Mini benchmark and reproducibility polish
+
+Added judge-facing reproducibility improvements:
+
+- `Makefile` with `test`, `benchmark`, `evidence`, `readiness`, provider, and CROO activity commands
+- `examples/run_benchmark.py`
+- `tests/test_benchmark.py`
+- `artifacts/benchmark/proofmesh-mini-benchmark.json`
+- `artifacts/benchmark/proofmesh-mini-benchmark.md`
+- expanded architecture diagrams in `writeup/architecture.md`
+- benchmark concept page in `wiki/concepts/benchmark-validation.md`
+
+Current mini benchmark: 30 deterministic synthetic cases, with 10 supported, 10 unsupported, and 10 contradicted cases. Current MVP result: 30/30 correct. This is regression evidence, not a broad factual-truth benchmark.
+
 ## [2026-06-26] packaging | Phase 4 submission scaffolding
 
 Prepared the project for judge-facing review:

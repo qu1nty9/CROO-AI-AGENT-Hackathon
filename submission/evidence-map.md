@@ -36,6 +36,17 @@ Evidence:
 - `artifacts/phase2/mock-cap-batch-summary.json`
 - `artifacts/phase2/mock-cap-batch-summary.md`
 
+## Mini Benchmark Claim
+
+The deterministic MVP can separate simple supported, unsupported, and contradicted claim sets in a reproducible synthetic benchmark.
+
+Evidence:
+
+- `examples/run_benchmark.py`
+- `artifacts/benchmark/proofmesh-mini-benchmark.json`
+- `artifacts/benchmark/proofmesh-mini-benchmark.md`
+- `tests/test_benchmark.py`
+
 ## Live Readiness Claim
 
 ProofMesh has service metadata, env config, readiness checks, a Python CROO provider runner, and a live-ready dry-run adapter. A live purchase was attempted but no live settlement is claimed because wallet funding did not appear on the usable purchase balance.
@@ -65,7 +76,7 @@ PYTHONPATH=src .venv/bin/python examples/run_all_evidence.py
 
 Expected current test result:
 
-- 20 tests pass
+- 22 tests pass
 
 ## Non-Claims
 

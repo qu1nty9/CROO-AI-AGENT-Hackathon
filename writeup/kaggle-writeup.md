@@ -259,6 +259,19 @@ Batch summary:
 | unsupported | false | 1 | 1 | 0 | 0.25 CROO |
 | contradicted | false | 0 | 0 | 2 | 0.25 CROO |
 
+Run the deterministic mini benchmark:
+
+```bash
+PYTHONPATH=src .venv/bin/python examples/run_benchmark.py
+```
+
+Benchmark summary:
+
+- 30 synthetic claim-set cases
+- 10 supported, 10 unsupported, 10 contradicted
+- current MVP result: 30/30 correct on this deterministic regression set
+- limitation: this is a synthetic regression benchmark, not a broad truth-verification benchmark
+
 Check live/staging readiness:
 
 ```bash

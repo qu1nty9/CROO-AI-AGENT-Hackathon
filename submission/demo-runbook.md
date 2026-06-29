@@ -73,6 +73,19 @@ Show:
 
 ## Segment 5: Live Readiness
 
+Optional quick benchmark segment before live readiness:
+
+```bash
+PYTHONPATH=src .venv/bin/python examples/run_benchmark.py
+```
+
+Show:
+
+- `artifacts/benchmark/proofmesh-mini-benchmark.md`
+- 30 deterministic cases
+- supported / unsupported / contradicted separation
+- limitation: synthetic regression benchmark, not broad truth verification
+
 Command:
 
 ```bash

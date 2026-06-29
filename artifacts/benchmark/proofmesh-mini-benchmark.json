@@ -1,0 +1,287 @@
+{
+  "benchmark": "proofmesh-mini-benchmark",
+  "generated_at": "2026-06-29T22:22:38.454853+00:00",
+  "cases_total": 30,
+  "cases_correct": 30,
+  "accuracy": 1.0,
+  "labels": [
+    "supported",
+    "unsupported",
+    "contradicted"
+  ],
+  "per_label": {
+    "contradicted": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 10
+    },
+    "supported": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 10
+    },
+    "unsupported": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 10
+    }
+  },
+  "confusion": {
+    "supported": {
+      "supported": 10
+    },
+    "unsupported": {
+      "unsupported": 10
+    },
+    "contradicted": {
+      "contradicted": 10
+    }
+  },
+  "rows": [
+    {
+      "case_id": "supported-01",
+      "expected_status": "supported",
+      "actual_status": "supported",
+      "correct": true,
+      "is_verified": true,
+      "overall_confidence": 1.0
+    },
+    {
+      "case_id": "unsupported-01",
+      "expected_status": "unsupported",
+      "actual_status": "unsupported",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "contradicted-01",
+      "expected_status": "contradicted",
+      "actual_status": "contradicted",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "supported-02",
+      "expected_status": "supported",
+      "actual_status": "supported",
+      "correct": true,
+      "is_verified": true,
+      "overall_confidence": 1.0
+    },
+    {
+      "case_id": "unsupported-02",
+      "expected_status": "unsupported",
+      "actual_status": "unsupported",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "contradicted-02",
+      "expected_status": "contradicted",
+      "actual_status": "contradicted",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "supported-03",
+      "expected_status": "supported",
+      "actual_status": "supported",
+      "correct": true,
+      "is_verified": true,
+      "overall_confidence": 1.0
+    },
+    {
+      "case_id": "unsupported-03",
+      "expected_status": "unsupported",
+      "actual_status": "unsupported",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "contradicted-03",
+      "expected_status": "contradicted",
+      "actual_status": "contradicted",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "supported-04",
+      "expected_status": "supported",
+      "actual_status": "supported",
+      "correct": true,
+      "is_verified": true,
+      "overall_confidence": 1.0
+    },
+    {
+      "case_id": "unsupported-04",
+      "expected_status": "unsupported",
+      "actual_status": "unsupported",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "contradicted-04",
+      "expected_status": "contradicted",
+      "actual_status": "contradicted",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "supported-05",
+      "expected_status": "supported",
+      "actual_status": "supported",
+      "correct": true,
+      "is_verified": true,
+      "overall_confidence": 1.0
+    },
+    {
+      "case_id": "unsupported-05",
+      "expected_status": "unsupported",
+      "actual_status": "unsupported",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "contradicted-05",
+      "expected_status": "contradicted",
+      "actual_status": "contradicted",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "supported-06",
+      "expected_status": "supported",
+      "actual_status": "supported",
+      "correct": true,
+      "is_verified": true,
+      "overall_confidence": 1.0
+    },
+    {
+      "case_id": "unsupported-06",
+      "expected_status": "unsupported",
+      "actual_status": "unsupported",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "contradicted-06",
+      "expected_status": "contradicted",
+      "actual_status": "contradicted",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "supported-07",
+      "expected_status": "supported",
+      "actual_status": "supported",
+      "correct": true,
+      "is_verified": true,
+      "overall_confidence": 1.0
+    },
+    {
+      "case_id": "unsupported-07",
+      "expected_status": "unsupported",
+      "actual_status": "unsupported",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "contradicted-07",
+      "expected_status": "contradicted",
+      "actual_status": "contradicted",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "supported-08",
+      "expected_status": "supported",
+      "actual_status": "supported",
+      "correct": true,
+      "is_verified": true,
+      "overall_confidence": 1.0
+    },
+    {
+      "case_id": "unsupported-08",
+      "expected_status": "unsupported",
+      "actual_status": "unsupported",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "contradicted-08",
+      "expected_status": "contradicted",
+      "actual_status": "contradicted",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "supported-09",
+      "expected_status": "supported",
+      "actual_status": "supported",
+      "correct": true,
+      "is_verified": true,
+      "overall_confidence": 1.0
+    },
+    {
+      "case_id": "unsupported-09",
+      "expected_status": "unsupported",
+      "actual_status": "unsupported",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "contradicted-09",
+      "expected_status": "contradicted",
+      "actual_status": "contradicted",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "supported-10",
+      "expected_status": "supported",
+      "actual_status": "supported",
+      "correct": true,
+      "is_verified": true,
+      "overall_confidence": 1.0
+    },
+    {
+      "case_id": "unsupported-10",
+      "expected_status": "unsupported",
+      "actual_status": "unsupported",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    },
+    {
+      "case_id": "contradicted-10",
+      "expected_status": "contradicted",
+      "actual_status": "contradicted",
+      "correct": true,
+      "is_verified": false,
+      "overall_confidence": 0.0
+    }
+  ],
+  "limitations": [
+    "Synthetic benchmark cases are deterministic and intentionally simple.",
+    "Scores measure the current transparent MVP behavior, not broad factual truth verification.",
+    "The benchmark is meant for regression checks and judge-facing reproducibility, not academic generalization."
+  ]
+}

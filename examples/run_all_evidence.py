@@ -119,6 +119,10 @@ COMMANDS = [
     ],
     [
         sys.executable,
+        "examples/run_benchmark.py",
+    ],
+    [
+        sys.executable,
         "examples/check_live_readiness.py",
     ],
     [

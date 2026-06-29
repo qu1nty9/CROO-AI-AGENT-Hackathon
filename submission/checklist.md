@@ -5,15 +5,15 @@ Status: working checklist.
 ## Required By Brief
 
 - [ ] Agent listed on CROO Agent Store
-- [ ] CAP integration implemented
+- [x] CAP integration implemented
 - [x] Agent is callable by other agents in mock CAP
 - [x] Settlement flow clearly documented as mock CAP
 - [x] Public GitHub repository
   - https://github.com/qu1nty9/CROO-AI-AGENT-Hackathon
 - [x] Permissive license: MIT or Apache 2.0
 - [x] README with setup instructions
-- [ ] SDK methods used documented
-- [ ] Integration notes documented
+- [x] SDK methods used documented
+- [x] Integration notes documented
 - [ ] Demo video under 5 minutes
 - [ ] DoraHacks BUIDL submitted
 
@@ -22,7 +22,7 @@ Status: working checklist.
 - [x] Local integration test logs
 - [x] Example request JSON
 - [x] Example response JSON
-- [ ] Architecture diagram
+- [x] Architecture diagram
 - [x] Pricing model
 - [x] Known limitations
 - [ ] Screenshots or transaction proof from live/staging CAP
@@ -54,6 +54,8 @@ Status: working checklist.
 - Mock CAP lifecycle Markdown: `artifacts/phase2/mock-cap-demo-log.md`
 - Mock CAP batch JSON: `artifacts/phase2/mock-cap-batch-summary.json`
 - Mock CAP batch Markdown: `artifacts/phase2/mock-cap-batch-summary.md`
+- Mini benchmark JSON: `artifacts/benchmark/proofmesh-mini-benchmark.json`
+- Mini benchmark Markdown: `artifacts/benchmark/proofmesh-mini-benchmark.md`
 - Live readiness report: `artifacts/phase3/live-readiness-report.json`
 - Live dry-run audit: `artifacts/phase3/live-dry-run-audit.json`
 - CROO purchase attempt: `artifacts/phase3/croo-purchase-attempt.json`

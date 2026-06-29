@@ -11,6 +11,7 @@ Repository: https://github.com/qu1nty9/CROO-AI-AGENT-Hackathon
 - Local verifier: implemented
 - Mock CAP requester/provider lifecycle: implemented
 - Batch evidence for supported/unsupported/contradicted cases: implemented
+- Mini benchmark: implemented
 - Live/staging CROO readiness scaffold: implemented
 - CROO Python SDK: package confirmed as `croo-sdk`, importing module `croo`
 - Live CROO settlement: attempted but not completed because wallet funding did not appear on the usable purchase balance
@@ -33,9 +34,10 @@ PYTHONPATH=src .venv/bin/python examples/run_all_evidence.py
 
 Expected current result:
 
-- 20 tests pass
+- 22 tests pass
 - local audit artifacts regenerate
 - Phase 1/2/3 artifacts regenerate
+- mini benchmark artifacts regenerate
 - committed staging readiness is `True` when generated with `CROO_API_KEY`
 - third-party reruns without `CROO_API_KEY` will show the key check as missing
 - live settlement is not claimed; purchase was attempted but blocked by wallet funding before an order receipt was obtained
@@ -50,6 +52,15 @@ Run tests:
 
 ```bash
 PYTHONPATH=src .venv/bin/python -m unittest discover -s tests
+```
+
+Equivalent Makefile shortcuts:
+
+```bash
+make test
+make benchmark
+make evidence
+make readiness
 ```
 
 Expected current behavior: the example report is not fully verified, because one claim says a live CROO settlement already happened while the local status source says no live settlement receipt exists yet.
@@ -85,6 +96,17 @@ Saved batch evidence:
 
 - `artifacts/phase2/mock-cap-batch-summary.json`
 - `artifacts/phase2/mock-cap-batch-summary.md`
+
+Run the deterministic mini benchmark:
+
+```bash
+PYTHONPATH=src .venv/bin/python examples/run_benchmark.py
+```
+
+Saved benchmark evidence:
+
+- `artifacts/benchmark/proofmesh-mini-benchmark.json`
+- `artifacts/benchmark/proofmesh-mini-benchmark.md`
 
 Check Phase 3 live/staging readiness:
 
@@ -130,6 +152,8 @@ Saved Phase 3 evidence:
 - `artifacts/phase3/live-dry-run-audit.md`
 - `artifacts/phase3/croo-purchase-attempt.json`
 - `artifacts/phase3/croo-purchase-attempt.md`
+- `artifacts/benchmark/proofmesh-mini-benchmark.json`
+- `artifacts/benchmark/proofmesh-mini-benchmark.md`
 - Live provider runner: `examples/run_croo_provider.py`
 
 ## Key Artifacts

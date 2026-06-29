@@ -7,6 +7,7 @@
 - [ ] CLI run screenshot showing `is_verified: false`
 - [ ] Unit test screenshot or copied terminal output
 - [ ] Mock CAP lifecycle log screenshot
+- [ ] Mini benchmark summary screenshot or copied table
 - [ ] Example JSON response snippet
 - [ ] Agent Store listing screenshot, if available
 - [ ] DoraHacks submission screenshot, if useful
@@ -22,8 +23,10 @@
 | ProofMesh handles supported/unsupported/contradicted cases | `artifacts/phase1/*.json` | implemented |
 | ProofMesh runs through CAP lifecycle | `artifacts/phase2/mock-cap-demo-log.json` | implemented as mock |
 | ProofMesh reports batch cost/latency | `artifacts/phase2/mock-cap-batch-summary.json` | implemented as mock |
-| ProofMesh is live-ready | `artifacts/phase3/live-readiness-report.json` | scaffold implemented |
-| ProofMesh settles on live CROO | live/staging receipt | pending |
+| ProofMesh separates supported/unsupported/contradicted cases in a deterministic benchmark | `artifacts/benchmark/proofmesh-mini-benchmark.json` | implemented |
+| ProofMesh is CROO staging-ready | `artifacts/phase3/live-readiness-report.json` | implemented |
+| ProofMesh attempted CROO purchase | `artifacts/phase3/croo-purchase-attempt.json` | blocked by wallet funding |
+| ProofMesh settles on live CROO | live/staging receipt | not claimed |
 
 ### Demo Cases Table
 
@@ -47,8 +50,8 @@
 - [ ] clear distinction between local, mock, staging, and live
 - [ ] all commands reproducible
 - [x] one-command local evidence regeneration
-- [ ] demo output matches repository state
-- [ ] at least one visual diagram
+- [x] demo output matches repository state
+- [x] at least one visual diagram
 - [ ] at least one concrete failure case
 - [ ] tracks named explicitly
 - [ ] limitations section included
