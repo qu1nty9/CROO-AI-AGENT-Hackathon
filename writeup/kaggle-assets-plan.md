@@ -46,13 +46,13 @@
 
 ## Final Writeup Checklist
 
-- [ ] no unverified live settlement claims
-- [ ] clear distinction between local, mock, staging, and live
-- [ ] all commands reproducible
+- [x] no unverified live settlement claims
+- [x] clear distinction between local, mock, staging, and live
+- [x] all commands reproducible
 - [x] one-command local evidence regeneration
 - [x] demo output matches repository state
 - [x] at least one visual diagram
-- [ ] at least one concrete failure case
-- [ ] tracks named explicitly
-- [ ] limitations section included
-- [ ] business model explained in one paragraph
+- [x] at least one concrete failure case
+- [x] tracks named explicitly
+- [x] limitations section included
+- [x] business model explained in one paragraph

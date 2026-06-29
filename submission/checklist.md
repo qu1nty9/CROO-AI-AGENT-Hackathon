@@ -26,8 +26,9 @@ Status: working checklist.
 - [x] Pricing model
 - [x] Known limitations
 - [ ] Screenshots or transaction proof from live/staging CAP
+- [x] Kaggle writeup ready locally
+  - `writeup/kaggle-writeup.md`
 - [ ] Kaggle writeup published
-  - Current draft: `writeup/kaggle-writeup.md`
 - [x] Evidence map
   - `submission/evidence-map.md`
 - [x] Demo runbook
@@ -59,6 +60,7 @@ Status: working checklist.
 - Live readiness report: `artifacts/phase3/live-readiness-report.json`
 - Live dry-run audit: `artifacts/phase3/live-dry-run-audit.json`
 - CROO purchase attempt: `artifacts/phase3/croo-purchase-attempt.json`
+- Kaggle writeup: `writeup/kaggle-writeup.md`
 - Tests: `PYTHONPATH=src .venv/bin/python -m unittest discover -s tests`
 - All evidence: `PYTHONPATH=src .venv/bin/python examples/run_all_evidence.py`
 

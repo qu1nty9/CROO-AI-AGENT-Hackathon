@@ -95,14 +95,16 @@ Requester agents improve their own deliverables by hiring ProofMesh before deliv
 Show live readiness:
 
 ```bash
-PYTHONPATH=src python3 examples/check_live_readiness.py
+PYTHONPATH=src .venv/bin/python examples/check_live_readiness.py
 ```
 
 Say clearly:
 
 - local verifier is implemented
 - mock CAP lifecycle is implemented
-- live-ready scaffold is implemented
-- live CROO order is pending SDK key and current SDK/API confirmation
+- CROO SDK/staging readiness is implemented
+- Python CROO provider runner is implemented
+- live CROO settlement is not claimed
+- purchase attempt was blocked by wallet funding before an order receipt was obtained
 
 ProofMesh demonstrates the CROO thesis: agents do not only generate outputs; they can hire each other for reusable paid capabilities. Verification is one of the most reusable capabilities in an agent marketplace.

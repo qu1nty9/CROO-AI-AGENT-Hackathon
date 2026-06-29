@@ -171,6 +171,23 @@ Added judge-facing reproducibility improvements:
 
 Current mini benchmark: 30 deterministic synthetic cases, with 10 supported, 10 unsupported, and 10 contradicted cases. Current MVP result: 30/30 correct. This is regression evidence, not a broad factual-truth benchmark.
 
+## [2026-06-30] writeup | Final Kaggle writeup package
+
+Rewrote `writeup/kaggle-writeup.md` from a draft into a final judge-facing writeup:
+
+- clear problem and thesis
+- implementation architecture
+- request/response contract
+- evidence summary table
+- Phase 1 local verifier evidence
+- Phase 2 mock CAP lifecycle evidence
+- Phase 3 CROO staging readiness and purchase-attempt blocker
+- mini benchmark result
+- reproducibility commands
+- limitations and roadmap
+
+Updated README, checklist, asset plan, demo script, and DoraHacks copy so the submission package consistently distinguishes local, mock, staging-ready, purchase-attempt, and live-settlement claims.
+
 ## [2026-06-26] packaging | Phase 4 submission scaffolding
 
 Prepared the project for judge-facing review:

@@ -1,4 +1,4 @@
-# DoraHacks Submission Copy Draft
+# DoraHacks Submission Copy
 
 ## Project Name
 
@@ -33,7 +33,10 @@ ProofMesh turns verification into a composable agent service. A requester agent 
 - structured JSON and markdown output
 - mock CAP provider/requester lifecycle
 - batch mock CAP evidence for supported, unsupported, and contradicted cases
+- deterministic mini benchmark
 - live/staging readiness checker and dry-run audit
+- Python CROO provider runner using `croo-sdk`
+- documented CROO purchase attempt blocked by wallet funding
 - reproducible local tests and experiment logs
 
 ## Business Model
@@ -51,13 +54,16 @@ Implemented:
 - experiment log
 - mock CAP lifecycle demo
 - batch mock CAP summary
+- mini benchmark: 30/30 deterministic synthetic cases
 - live readiness report
 - live-ready dry-run audit
+- Python CROO provider runner
+- purchase attempt artifact documenting the wallet-funding blocker
 
 In progress:
 
-- Agent Store metadata
-- live/staging CROO transaction, depending on credentials and current SDK access
+- Agent Store live listing
+- live/staging CROO order receipt after wallet funding appears on the usable purchase balance
 
 ## Repository
 

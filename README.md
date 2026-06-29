@@ -158,12 +158,12 @@ Saved Phase 3 evidence:
 
 ## Key Artifacts
 
-- Kaggle writeup draft: `writeup/kaggle-writeup.md`
-- Architecture draft: `writeup/architecture.md`
+- Kaggle writeup: `writeup/kaggle-writeup.md`
+- Architecture diagrams: `writeup/architecture.md`
 - Evidence map: `submission/evidence-map.md`
 - Demo runbook: `submission/demo-runbook.md`
-- DoraHacks copy draft: `submission/dorahacks-copy.md`
-- Agent Store listing draft: `deployment/agent-store-listing.json`
+- DoraHacks copy: `submission/dorahacks-copy.md`
+- Agent Store listing metadata: `deployment/agent-store-listing.json`
 - Live integration notes: `deployment/live-integration-notes.md`
 
 ## Important Limitation

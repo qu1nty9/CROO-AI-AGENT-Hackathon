@@ -1,119 +1,78 @@
-# ProofMesh: A Paid Verification Agent for Trustworthy CAP Workflows
-
-Status: Kaggle writeup draft.
+# ProofMesh: A Paid Verification Agent for Trustworthy CROO Workflows
 
 Repository: https://github.com/qu1nty9/CROO-AI-AGENT-Hackathon
 
 ## TL;DR
 
-ProofMesh is a paid, callable verification and provenance agent for CROO CAP workflows. A requester agent can hire ProofMesh before delivering a report, dataset summary, or generated artifact to its own customer. ProofMesh audits the artifact claim by claim, checks source coverage, flags contradictions, returns confidence scores and limitations, and attaches CAP lifecycle metadata to the deliverable.
+ProofMesh is a paid verification and provenance agent for CROO/CAP-style agent commerce. A requester agent can hire ProofMesh before delivering a generated report, dataset summary, or claim bundle. ProofMesh checks each claim against supplied sources, flags unsupported or contradicted statements, returns confidence and limitation metadata, and attaches lifecycle receipt information to the delivered audit.
 
-The core idea is simple: in an agent marketplace, verification should itself be a composable paid service.
+The core thesis is simple: in an agent marketplace, verification should itself be a callable paid service.
 
-Tracks:
+Recommended tracks:
 
 - Data & Verification Agents
 - Research & Intelligence Agents
 
-## What We Built
+## Problem
 
-ProofMesh is designed as a provider agent that can be called by other agents. Its first service is `source_coverage_audit`: a structured audit of claims against supplied sources.
+Most agent demos focus on generation: summaries, research, code, analytics, or recommendations. Once agents sell those outputs, a second problem appears: buyers need to know what was checked, which sources were used, and whether the output overclaims.
 
-Current implemented components:
+If every agent implements its own quality checks, verification becomes duplicated and inconsistent. ProofMesh treats verification as a reusable dependency. A requester agent can buy an audit from ProofMesh before passing its own output to a customer.
 
-- dependency-free local verification core
-- command-line audit interface
-- versioned request/response schema: `proofmesh.verification.v1`
-- mock CAP requester/provider lifecycle
-- example request JSON
-- markdown and JSON output modes
-- unit tests for supported, unsupported, contradicted, and generated claims
-- saved demo outputs in `artifacts/demo-audit.json` and `artifacts/demo-audit.md`
-- three canonical Phase 1 demo cases with saved outputs
-- saved mock CAP lifecycle evidence in `artifacts/phase2/`
-- batch mock CAP summary across supported, unsupported, and contradicted cases
-- architecture draft in `writeup/architecture.md`
-- live/staging readiness adapter and dry-run artifacts
-- one-command evidence regeneration via `examples/run_all_evidence.py`
-- submission evidence map and demo runbook
-- experiment log showing that ProofMesh blocks an overclaim about live settlement
-- LLM Wiki style project knowledge base for reproducibility and writeup continuity
+## What ProofMesh Does
 
-Planned submission components:
+ProofMesh provides a `source_coverage_audit` service. The requester sends:
 
-- Agent Store listing and DoraHacks BUIDL metadata
-- live/staging CROO transaction if credentials and current SDK documentation are available
+- an artifact type
+- claims or raw artifact text
+- sources
+- optional claim-to-source links
 
-## Why This Matters
+ProofMesh returns:
 
-Most agent demos focus on generation: research summaries, code, analytics, reports, decisions. But paid agent commerce creates a second problem: buyers and downstream agents need a reason to trust what they receive.
+- artifact-level `is_verified`
+- overall confidence
+- claim-level audit statuses
+- source coverage counts
+- contradiction flags
+- limitations
+- CAP/CROO receipt metadata
 
-If every agent implements its own verification logic, verification quality is inconsistent and duplicated. If verification becomes a callable CAP service, any agent can buy the same quality-control dependency before delivering its own output.
-
-ProofMesh turns verification into a marketplace primitive:
-
-- reusable by many requester agents
-- priced per audit
-- structured enough for downstream automation
-- auditable through evidence and settlement metadata
-- honest about uncertainty and limitations
-
-## Why CAP Is Essential
-
-Without CAP, ProofMesh is just a local checker or API. With CAP, ProofMesh becomes an economic dependency in an A2A workflow.
-
-The desired lifecycle:
-
-1. A requester agent generates an output for a buyer.
-2. Before delivery, it sends a verification job to ProofMesh.
-3. ProofMesh accepts the job through CAP.
-4. The requester pays for the service.
-5. ProofMesh performs the audit.
-6. ProofMesh delivers a structured evidence report.
-7. The requester includes the audit result in its final deliverable.
-
-This is the hackathon thesis in miniature: agents can discover, hire, pay, and compose other agents as real services.
-
-Current evidence: the repository includes a local mock CAP lifecycle with service registration, negotiation, acceptance, payment event, audit delivery, ledger entries, and saved logs.
-
-Phase 3 status: ProofMesh is live-ready but not live-submitted. The repository includes environment config, service listing metadata, readiness checks, and a dry-run audit with `cap_receipt.mode = live_ready_dry_run`.
+The current MVP is intentionally transparent. It does not claim broad semantic truth verification. It performs deterministic source-coverage and local contradiction checks so every result is reproducible from code and saved artifacts.
 
 ## Architecture
 
+ProofMesh separates the verification core from the agent-commerce boundary.
+
 ```text
 Requester Agent
-  |
-  | VerificationRequest
-  v
-CROO CAP lifecycle
-  |  negotiation -> payment -> delivery
-  v
-ProofMesh Provider Agent
-  |
-  | claim extraction / source coverage / contradiction checks
-  v
-VerificationResponse
-  |
-  | evidence package + confidence + limitations + CAP receipt
-  v
-Requester final deliverable
+  -> VerificationRequest: claims + sources
+  -> CROO/CAP service boundary
+  -> ProofMesh Provider
+  -> Schema validation
+  -> Audit core
+  -> VerificationResponse: audit + limitations + receipt metadata
 ```
 
-ProofMesh separates three concerns:
+The repository also includes a mock CAP network and a live/staging CROO provider runner:
 
-- `audit core`: deterministic verification logic and scoring
-- `agent wrapper`: CAP negotiation, order handling, and delivery
-- `evidence output`: structured response for humans and downstream agents
+- `src/proofmesh/auditor.py`: deterministic audit core
+- `src/proofmesh/schema.py`: request normalization and validation
+- `src/proofmesh/cap_mock.py`: local CAP-style negotiation/payment/delivery lifecycle
+- `src/proofmesh/provider.py`: mock ProofMesh provider wrapper
+- `src/proofmesh/croo_provider.py`: Python provider runner using the official `croo-sdk`
+- `src/proofmesh/live_adapter.py`: live/staging readiness and dry-run boundary
 
-## Request Schema
+The fuller architecture diagrams are in `writeup/architecture.md`.
 
-The request is intentionally explicit. The requester can send claims directly or send artifact text that ProofMesh splits into auditable claims.
+## Request And Response Contract
+
+The request schema is explicit so another agent can call ProofMesh without prompt interpretation.
 
 ```json
 {
   "task_id": "demo-research-001",
   "artifact_type": "research_report",
-  "artifact_text": "CAP lets agents discover, hire, and pay other agents on-chain.",
   "claims": [
     {
       "id": "c1",
@@ -133,14 +92,14 @@ The request is intentionally explicit. The requester can send claims directly or
 }
 ```
 
-## Response Schema
-
-ProofMesh returns a structured response:
+The response is machine-readable and conservative. One contradicted or unsupported claim prevents the artifact from being marked fully verified.
 
 ```json
 {
+  "schema_version": "proofmesh.verification.v1",
   "task_id": "demo-research-001",
   "artifact_type": "research_report",
+  "audit_mode": "source_coverage",
   "is_verified": false,
   "overall_confidence": 0.333,
   "source_coverage": {
@@ -160,84 +119,58 @@ ProofMesh returns a structured response:
 }
 ```
 
-The important behavior is conservative verification: one contradicted or unsupported claim prevents the entire artifact from being marked fully verified.
+## Evidence Summary
 
-Phase 1 schema version: `proofmesh.verification.v1`.
+| Claim | Evidence | Status |
+| --- | --- | --- |
+| ProofMesh audits source-backed claims | `src/proofmesh/auditor.py`, `artifacts/demo-audit.json` | implemented |
+| ProofMesh blocks overclaims | `artifacts/demo-audit.md`, `experiments/2026-06-26-proofmesh-local-audit.md` | implemented |
+| ProofMesh handles supported, unsupported, and contradicted cases | `examples/cases/`, `artifacts/phase1/` | implemented |
+| ProofMesh runs through an A2A requester/provider lifecycle | `src/proofmesh/cap_mock.py`, `artifacts/phase2/mock-cap-demo-log.json` | implemented as mock CAP |
+| ProofMesh reports batch mock CAP results and cost | `artifacts/phase2/mock-cap-batch-summary.json` | implemented as mock CAP |
+| ProofMesh has a deterministic mini benchmark | `examples/run_benchmark.py`, `artifacts/benchmark/proofmesh-mini-benchmark.json` | implemented |
+| ProofMesh is CROO SDK/staging-ready | `artifacts/phase3/live-readiness-report.json`, `src/proofmesh/croo_provider.py` | implemented |
+| ProofMesh completed live CROO settlement | none | not claimed |
 
-## Demo Scenario
+## Phase 1: Local Verifier
 
-The demo scenario is a research-agent handoff across a mock CAP lifecycle.
+The first milestone was a dependency-free verifier that can run locally and produce deterministic JSON/Markdown outputs.
 
-There are two related demo layers:
-
-- the local CLI demo contains two source-backed claims and one overclaim about live settlement
-- the mock CAP lifecycle demo uses a stricter request with two overclaims about live CROO behavior
-
-ProofMesh marks both artifacts as not verified. This is exactly the product behavior we want: ProofMesh should help other agents avoid publishing or selling overstated claims.
-
-The Phase 2 mock CAP demo shows:
-
-- requester: `cap://research-requester.local`
-- provider: `cap://proofmesh-provider.local`
-- service: `proofmesh-source-coverage-audit`
-- price: `0.25 CROO`
-- lifecycle: service registration -> negotiation -> acceptance -> payment -> delivery
-- delivered audit: `is_verified: false`
-- delivered audit summary: `claims_contradicted: 2`
-
-Saved evidence:
-
-- `artifacts/phase2/mock-cap-demo-log.json`
-- `artifacts/phase2/mock-cap-demo-log.md`
-- `artifacts/phase2/mock-cap-batch-summary.json`
-- `artifacts/phase2/mock-cap-batch-summary.md`
-- `artifacts/phase3/live-readiness-report.json`
-- `artifacts/phase3/live-dry-run-audit.json`
-
-## Current Reproducible Run
-
-Run the local verifier:
+Command:
 
 ```bash
-PYTHONPATH=src python3 -m proofmesh.cli audit examples/research_claim.json --format markdown
+PYTHONPATH=src .venv/bin/python -m proofmesh.cli audit examples/research_claim.json --format markdown
 ```
 
-Regenerate all local evidence:
+The demo intentionally includes an overclaim that live CROO settlement already happened. ProofMesh marks the artifact as not fully verified, which is the desired behavior.
 
-```bash
-PYTHONPATH=src .venv/bin/python examples/run_all_evidence.py
-```
+Saved outputs:
 
-Run tests:
+- `artifacts/demo-audit.json`
+- `artifacts/demo-audit.md`
+- `artifacts/phase1/supported-artifact.json`
+- `artifacts/phase1/unsupported-claim.json`
+- `artifacts/phase1/contradicted-claim.json`
 
-```bash
-PYTHONPATH=src python3 -m unittest discover -s tests
-```
+Canonical Phase 1 cases:
 
-Current result:
-
-- 16 unit tests pass
-- example audit returns `is_verified: false`
-- the live-settlement overclaim is flagged as contradicted
-- saved outputs:
-  - `artifacts/demo-audit.json`
-  - `artifacts/demo-audit.md`
-
-Phase 1 canonical cases:
-
-| Case | Expected result | Saved output |
+| Case | Expected result | Artifact |
 | --- | --- | --- |
 | Supported artifact | `is_verified: true` | `artifacts/phase1/supported-artifact.json` |
 | Unsupported claim | `is_verified: false` | `artifacts/phase1/unsupported-claim.json` |
 | Contradicted claim | `is_verified: false` | `artifacts/phase1/contradicted-claim.json` |
 
-Run the mock CAP lifecycle:
+## Phase 2: Mock CAP Lifecycle
+
+The second milestone was proving the agent-commerce boundary in a reproducible local mock network.
+
+Command:
 
 ```bash
-PYTHONPATH=src python3 examples/run_mock_cap_demo.py
+PYTHONPATH=src .venv/bin/python examples/run_mock_cap_demo.py
 ```
 
-Expected lifecycle events:
+Lifecycle events:
 
 - `service_registered`
 - `negotiation_created`
@@ -245,13 +178,14 @@ Expected lifecycle events:
 - `order_paid`
 - `order_completed`
 
-Run all canonical cases through mock CAP:
+The mock lifecycle demonstrates that ProofMesh can sit behind a requester/provider boundary: a requester creates a negotiation, pays for an audit, and receives a structured verification report.
 
-```bash
-PYTHONPATH=src python3 examples/run_mock_cap_batch.py
-```
+Saved evidence:
 
-Batch summary:
+- `artifacts/phase2/mock-cap-demo-log.json`
+- `artifacts/phase2/mock-cap-demo-log.md`
+
+Batch mock CAP cases:
 
 | Case | Verified | Supported | Unsupported | Contradicted | Mock cost |
 | --- | --- | ---: | ---: | ---: | ---: |
@@ -259,144 +193,172 @@ Batch summary:
 | unsupported | false | 1 | 1 | 0 | 0.25 CROO |
 | contradicted | false | 0 | 0 | 2 | 0.25 CROO |
 
-Run the deterministic mini benchmark:
+Saved batch evidence:
+
+- `artifacts/phase2/mock-cap-batch-summary.json`
+- `artifacts/phase2/mock-cap-batch-summary.md`
+
+## Phase 3: CROO SDK And Staging Readiness
+
+The live/staging layer was implemented without claiming settlement.
+
+What is implemented:
+
+- environment-backed CROO config
+- readiness report generator
+- live-ready dry-run audit
+- Python CROO provider runner using `croo-sdk`
+- CROO activity diagnostic script
+- Agent Store listing metadata
+
+Key files:
+
+- `src/proofmesh/config.py`
+- `src/proofmesh/live_adapter.py`
+- `src/proofmesh/croo_provider.py`
+- `examples/check_live_readiness.py`
+- `examples/run_live_dry_run.py`
+- `examples/run_croo_provider.py`
+- `examples/check_croo_activity.py`
+- `deployment/agent-store-listing.json`
+
+Staging readiness was confirmed with:
+
+- `PROOFMESH_MODE=staging`
+- `PROOFMESH_PROVIDER_AGENT_ID=0xc38d5FE5125F5ce901768b26941Bac8758aCD46e`
+- `CROO_API_KEY` present and redacted in saved artifacts
+
+Saved Phase 3 evidence:
+
+- `artifacts/phase3/live-readiness-report.json`
+- `artifacts/phase3/live-readiness-report.md`
+- `artifacts/phase3/live-dry-run-audit.json`
+- `artifacts/phase3/live-dry-run-audit.md`
+- `artifacts/phase3/croo-purchase-attempt.json`
+- `artifacts/phase3/croo-purchase-attempt.md`
+
+Important status: the CROO purchase/order flow appeared completable, but the wallet funding used for the purchase did not appear on the usable balance. Therefore no live/staging order receipt is attached, and live settlement is not claimed.
+
+## Mini Benchmark
+
+ProofMesh includes a deterministic synthetic benchmark for regression evidence.
+
+Command:
 
 ```bash
 PYTHONPATH=src .venv/bin/python examples/run_benchmark.py
 ```
 
-Benchmark summary:
+Current result:
 
-- 30 synthetic claim-set cases
-- 10 supported, 10 unsupported, 10 contradicted
-- current MVP result: 30/30 correct on this deterministic regression set
-- limitation: this is a synthetic regression benchmark, not a broad truth-verification benchmark
+- 30 total claim-set cases
+- 10 supported
+- 10 unsupported
+- 10 contradicted
+- 30/30 correct on this synthetic regression set
+- accuracy: 1.0
 
-Check live/staging readiness:
+Saved benchmark artifacts:
+
+- `artifacts/benchmark/proofmesh-mini-benchmark.json`
+- `artifacts/benchmark/proofmesh-mini-benchmark.md`
+
+Interpretation: this benchmark is useful for reproducibility and regression testing. It is not evidence of broad factual truth verification because the cases are synthetic and intentionally simple.
+
+## Reproducibility
+
+The main one-command regeneration path is:
 
 ```bash
-PYTHONPATH=src python3 examples/check_live_readiness.py
+python3 -m venv .venv
+.venv/bin/pip install croo-sdk
+PYTHONPATH=src .venv/bin/python examples/run_all_evidence.py
 ```
 
-Current live readiness:
+Convenience commands:
 
-- API URL configured: `https://api.croo.network`
-- WS URL configured: `wss://api.croo.network/ws`
-- service metadata ready
-- CROO SDK confirmed as `croo-sdk`, importing module `croo`
-- Python CROO provider runner added at `examples/run_croo_provider.py`
-- staging readiness artifact is `Ready: true` with redacted `CROO_API_KEY`
-- purchase/order flow appeared completable, but wallet funding did not appear on the usable purchase balance
-- blocked by missing live/staging order receipt
-
-## Validation
+```bash
+make test
+make benchmark
+make evidence
+make readiness
+```
 
 Current validation:
 
-- deterministic unit tests
-- fixed example input
-- three canonical demo cases
-- mock requester/provider lifecycle test
-- saved mock CAP lifecycle log
-- batch cost/latency summary across canonical cases
-- live-ready config/readiness dry-run
-- reproducible local command
-- experiment record in `experiments/`
-- evidence map in `submission/evidence-map.md`
-- demo runbook in `submission/demo-runbook.md`
-
-Next validation before final submission:
-
-- Agent Store listing evidence
-- live/staging CROO order receipt once wallet funding is visible and purchase can complete
-
-Ideal validation:
-
-- small benchmark of 30-50 synthetic claim sets
-- human-readable expected labels
-- precision/recall for unsupported and contradicted claims
-- comparison with a requester agent self-check
+- 22 unit tests pass
+- deterministic local examples are saved
+- mock CAP lifecycle logs are saved
+- mini benchmark artifacts are saved
+- Phase 3 readiness and dry-run artifacts are saved
+- purchase attempt blocker is documented
 
 ## Business Model
 
-ProofMesh can charge per audit:
+ProofMesh can charge per audit. The current listing uses `0.25 CROO` per source coverage audit. Pricing can later scale by:
 
-- basic source coverage audit: low cost, fast response
-- deeper contradiction scan: higher cost, more sources
-- domain-specific verifier plugins: premium pricing
-- signed evidence bundle or human escalation: enterprise tier
+- number of claims
+- number of sources
+- contradiction-checking depth
+- latency requirements
+- domain-specific verifier plugins
+- signed evidence bundles
+- human escalation
 
-The buyer is not only a human. The more important buyer is another agent that wants to improve its own deliverable before selling it onward.
+The buyer is not only a human. The stronger use case is another agent that wants to improve its own deliverable before selling it onward.
 
 ## Why This Is Composable
 
-ProofMesh is not tied to one vertical. It can audit:
+ProofMesh is not tied to one vertical. The same service boundary can audit:
 
 - research reports
 - market intelligence summaries
 - dataset summaries
-- due-diligence outputs
+- due diligence outputs
 - generated compliance notes
 - agent-generated documentation
 
-The same interface works because the service boundary is claim-level verification, not one specific task domain.
+The reusable unit is claim-level evidence checking, not a single task domain.
 
 ## Limitations
 
-Current limitations:
+ProofMesh deliberately avoids overclaiming:
 
-- local MVP is not live CROO settlement
+- local MVP output is not live CROO settlement
 - mock CAP lifecycle is not live CROO settlement
 - live-ready dry-run is not live CROO settlement
 - the CROO purchase attempt is not live settlement because no order receipt was obtained
 - lexical source coverage is not semantic truth verification
 - confidence scores are transparent heuristics, not calibrated probabilities
-- source quality is only as good as the provided evidence
+- source quality is only as good as the evidence supplied by the requester
 - high-stakes domains require domain-specific validation
-
-Submission rule: the final demo must clearly label mock, staging, and live behavior. Overclaiming settlement would undermine the whole project.
+- the mini benchmark is synthetic regression evidence, not a broad real-world benchmark
 
 ## Roadmap
 
-Short-term:
+Near-term:
 
-- convert architecture draft into final visual
-- produce demo video
-- prepare Agent Store listing copy
+- record a short demo video
+- complete DoraHacks/BUIDL submission
+- retry CROO purchase after wallet funding is visible
+- attach a real staging/live order receipt if the purchase completes
 
 Medium-term:
 
-- retry CROO purchase after wallet funding is visible
-- attach live/staging CAP receipt
 - add source retrieval adapters
-- add benchmark cases and metrics
+- expand benchmark cases with paraphrases and ambiguous evidence
+- compare ProofMesh against requester-agent self-checks
+- add signed evidence bundles
 
-Long-term:
+Research direction:
 
+- larger labeled benchmark
 - calibrated confidence scoring
-- signed evidence bundles
 - domain-specific verifier plugins
-- publication-quality evaluation
-
-## Reproducibility
-
-The repository includes:
-
-- `src/proofmesh/` for the verifier
-- `src/proofmesh/cap_mock.py` for the mock CAP network
-- `src/proofmesh/provider.py` for the ProofMesh provider wrapper
-- `examples/run_mock_cap_demo.py` for the requester/provider lifecycle demo
-- `examples/run_mock_cap_batch.py` for batch mock CAP evidence
-- `examples/check_live_readiness.py` for Phase 3 readiness
-- `examples/run_live_dry_run.py` for live-ready dry-run audit
-- `examples/run_all_evidence.py` for one-command local verification
-- `examples/` for input requests
-- `artifacts/` for saved demo outputs
-- `tests/` for unit tests
-- `experiments/` for run records
-- `wiki/` for maintained project knowledge
-- `submission/` for judging assets
+- paper-style evaluation of agent-to-agent verification services
 
 ## Closing
 
-ProofMesh is a small but concrete example of agent commerce: a requester agent can buy trust signals from another agent. That is the real product surface. CAP is not just payment plumbing here; it is what makes verification reusable, priced, and composable across the agent economy.
+ProofMesh demonstrates a concrete agent-commerce primitive: a requester agent can buy verification from another agent before delivering its own output. The project has local verifier evidence, mock CAP lifecycle evidence, CROO staging readiness, a Python CROO provider runner, a documented purchase attempt, and a reproducible mini benchmark.
+
+The final live settlement receipt is intentionally not claimed. That discipline is part of the project: a verification agent should be held to the same standard it asks other agents to meet.
