@@ -1,6 +1,6 @@
 # ProofMesh Live/Staging CROO Integration Notes
 
-Status: live-ready scaffold implemented; live CROO transaction pending a registered service and staging/live order.
+Status: live-ready scaffold implemented; live CROO purchase attempted but not completed because wallet funding did not appear on the usable purchase balance.
 
 ## What Is Implemented
 
@@ -26,6 +26,10 @@ CROO setup instructions currently use `pip install croo-sdk`, `export CROO_API_K
 - staging or live Agent Store listing
 - at least one transaction/order receipt or official staging receipt
 - `Require Fund Transfer` should stay disabled for ProofMesh unless the service is redesigned to manage principal funds. ProofMesh sells a fixed-price verification report, not a swap/bridge/lend flow.
+
+## Purchase Attempt Outcome
+
+On `2026-06-30`, the operator reported that the CROO order/purchase flow appeared completable, but wallet funding for the purchase did not appear on the usable balance. No CROO order receipt, delivery receipt, or settlement transaction is attached. This is documented in `artifacts/phase3/croo-purchase-attempt.md`.
 
 ## Local Commands
 

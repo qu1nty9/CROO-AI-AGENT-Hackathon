@@ -1,0 +1,20 @@
+{
+  "artifact_type": "croo_purchase_attempt",
+  "date": "2026-06-30",
+  "status": "blocked_external_wallet_funding",
+  "service_id": "proofmesh-source-coverage-audit",
+  "provider_agent_id": "0xc38d5FE5125F5ce901768b26941Bac8758aCD46e",
+  "amount_reported_by_operator": "0.3 USDC",
+  "receipt_attached": false,
+  "live_order_receipt_obtained": false,
+  "operator_report": "The ProofMesh service/order flow appeared completable in CROO, but the wallet funding used for the purchase did not appear on the usable balance, preventing final purchase completion.",
+  "evidence_level": "operator_report_no_croo_order_receipt",
+  "project_interpretation": "This blocks only the final live purchase receipt. It does not invalidate the local verifier, mock CAP lifecycle, CROO SDK readiness, staging readiness artifacts, or Python CROO provider runner.",
+  "submission_claim": "ProofMesh should be described as CROO staging-ready with a documented purchase attempt blocked by wallet funding, not as a completed live CROO settlement.",
+  "recommended_next_steps": [
+    "Preserve any wallet funding transaction hashes or screenshots outside the public repo if they contain sensitive wallet context.",
+    "Check the funding transaction on the correct chain and token contract.",
+    "Retry purchase after the wallet balance is visible in CROO.",
+    "Attach CROO negotiation/order/delivery IDs only after a completed staging or live order exists."
+  ]
+}

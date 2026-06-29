@@ -59,3 +59,9 @@ The project is ready for live integration from a code and metadata standpoint. T
 ## Submission Discipline
 
 Do not describe Phase 3 artifacts as live settlement. The correct label is `live-ready dry run` until a real CROO order or official staging transaction is attached.
+
+## Purchase Attempt Follow-up
+
+Date: `2026-06-30`
+
+The operator reported that the CROO purchase/order flow appeared completable, but wallet funding for the purchase did not appear on the usable balance. No CROO order receipt or settlement transaction was obtained. The attempt is documented in `artifacts/phase3/croo-purchase-attempt.md`.

@@ -142,7 +142,7 @@ Completed additions:
 
 Current blockers:
 
-- no committed public `CROO_API_KEY`, by design
+- wallet funding did not appear on the usable purchase balance during the purchase attempt
 - no live/staging receipt yet
 
 ## Phase 4: Demo And Submission

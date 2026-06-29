@@ -38,16 +38,20 @@ Evidence:
 
 ## Live Readiness Claim
 
-ProofMesh has service metadata, env config, readiness checks, and a live-ready dry-run adapter, but no live settlement is claimed.
+ProofMesh has service metadata, env config, readiness checks, a Python CROO provider runner, and a live-ready dry-run adapter. A live purchase was attempted but no live settlement is claimed because wallet funding did not appear on the usable purchase balance.
 
 Evidence:
 
 - `src/proofmesh/config.py`
 - `src/proofmesh/live_adapter.py`
+- `src/proofmesh/croo_provider.py`
+- `examples/run_croo_provider.py`
+- `examples/check_croo_activity.py`
 - `deployment/agent-store-listing.json`
 - `deployment/live-integration-notes.md`
 - `artifacts/phase3/live-readiness-report.json`
 - `artifacts/phase3/live-dry-run-audit.json`
+- `artifacts/phase3/croo-purchase-attempt.json`
 
 ## Reproducibility Claim
 

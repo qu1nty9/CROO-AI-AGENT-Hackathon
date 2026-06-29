@@ -273,6 +273,7 @@ Current live readiness:
 - CROO SDK confirmed as `croo-sdk`, importing module `croo`
 - Python CROO provider runner added at `examples/run_croo_provider.py`
 - staging readiness artifact is `Ready: true` with redacted `CROO_API_KEY`
+- purchase/order flow appeared completable, but wallet funding did not appear on the usable purchase balance
 - blocked by missing live/staging order receipt
 
 ## Validation
@@ -294,7 +295,7 @@ Current validation:
 Next validation before final submission:
 
 - Agent Store listing evidence
-- live/staging CROO integration once SDK key and current SDK methods are available
+- live/staging CROO order receipt once wallet funding is visible and purchase can complete
 
 Ideal validation:
 
@@ -334,6 +335,7 @@ Current limitations:
 - local MVP is not live CROO settlement
 - mock CAP lifecycle is not live CROO settlement
 - live-ready dry-run is not live CROO settlement
+- the CROO purchase attempt is not live settlement because no order receipt was obtained
 - lexical source coverage is not semantic truth verification
 - confidence scores are transparent heuristics, not calibrated probabilities
 - source quality is only as good as the provided evidence
@@ -351,7 +353,7 @@ Short-term:
 
 Medium-term:
 
-- integrate current CROO SDK
+- retry CROO purchase after wallet funding is visible
 - attach live/staging CAP receipt
 - add source retrieval adapters
 - add benchmark cases and metrics

@@ -149,6 +149,14 @@ The runner uses the installed `croo-sdk` package, accepts pending negotiations f
 
 Verification: 20 tests passed.
 
+## [2026-06-30] integration | CROO purchase attempt blocked
+
+The operator reported that the CROO order/purchase flow for ProofMesh appeared completable, but wallet funding for the purchase did not appear on the usable balance. No live/staging negotiation, order, delivery, or settlement receipt was obtained.
+
+Added `artifacts/phase3/croo-purchase-attempt.md` and `.json` to document this as an external wallet-funding blocker rather than a completed settlement.
+
+Submission language should now say: ProofMesh is staging-ready with a documented purchase attempt blocked by wallet funding; live CROO settlement is not claimed.
+
 ## [2026-06-26] packaging | Phase 4 submission scaffolding
 
 Prepared the project for judge-facing review:

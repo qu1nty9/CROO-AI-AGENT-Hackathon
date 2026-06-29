@@ -85,11 +85,12 @@ Show:
 - service metadata ready
 - SDK package confirmed as `croo-sdk` / Python module `croo`
 - `CROO_API_KEY` required for a local live/staging run
-- no live/staging order receipt attached yet
+- purchase attempt documented; wallet funding did not appear on the usable purchase balance
+- no live/staging order receipt attached
 
 Say clearly:
 
-This is live-ready dry-run evidence, not live settlement.
+This is staging-ready evidence plus a documented purchase attempt, not live settlement.
 
 Optional provider command for staging:
 
@@ -108,4 +109,4 @@ Show:
 
 Close:
 
-ProofMesh demonstrates a reusable paid verification dependency for agent commerce. The local and mock evidence is complete; live CROO settlement is the remaining external integration step.
+ProofMesh demonstrates a reusable paid verification dependency for agent commerce. The local, mock, and staging-readiness evidence is complete; live CROO settlement remains blocked by wallet funding/order receipt availability.

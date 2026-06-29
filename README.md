@@ -13,7 +13,7 @@ Repository: https://github.com/qu1nty9/CROO-AI-AGENT-Hackathon
 - Batch evidence for supported/unsupported/contradicted cases: implemented
 - Live/staging CROO readiness scaffold: implemented
 - CROO Python SDK: package confirmed as `croo-sdk`, importing module `croo`
-- Live CROO settlement: pending registered service and staging/live order receipt
+- Live CROO settlement: attempted but not completed because wallet funding did not appear on the usable purchase balance
 - Agent Store listing: metadata prepared, live listing pending
 
 ## Recommended Hackathon Tracks
@@ -38,7 +38,7 @@ Expected current result:
 - Phase 1/2/3 artifacts regenerate
 - committed staging readiness is `True` when generated with `CROO_API_KEY`
 - third-party reruns without `CROO_API_KEY` will show the key check as missing
-- live settlement remains a dry run until a staging/live order receipt is attached
+- live settlement is not claimed; purchase was attempted but blocked by wallet funding before an order receipt was obtained
 
 Run the local deterministic verifier:
 
@@ -128,6 +128,8 @@ Saved Phase 3 evidence:
 - `artifacts/phase3/live-readiness-report.md`
 - `artifacts/phase3/live-dry-run-audit.json`
 - `artifacts/phase3/live-dry-run-audit.md`
+- `artifacts/phase3/croo-purchase-attempt.json`
+- `artifacts/phase3/croo-purchase-attempt.md`
 - Live provider runner: `examples/run_croo_provider.py`
 
 ## Key Artifacts

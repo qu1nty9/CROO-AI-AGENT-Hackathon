@@ -16,6 +16,8 @@ Status: live-ready scaffold complete; live transaction pending service registrat
 - `artifacts/phase3/live-readiness-report.md`
 - `artifacts/phase3/live-dry-run-audit.json`
 - `artifacts/phase3/live-dry-run-audit.md`
+- `artifacts/phase3/croo-purchase-attempt.json`
+- `artifacts/phase3/croo-purchase-attempt.md`
 - `examples/run_croo_provider.py`
 
 ## Current Readiness
@@ -32,6 +34,7 @@ Passing checks:
 
 Blocking checks:
 
+- wallet funding did not appear on the usable purchase balance
 - no live/staging order receipt has been attached yet
 
 Resolved checks:
@@ -44,6 +47,8 @@ Resolved checks:
 ## Submission Discipline
 
 All Phase 3 artifacts must be labeled `live_ready_dry_run` until a real CROO order or official staging transaction exists.
+
+The purchase attempt can be described as an attempted CROO purchase blocked by wallet funding, not as a completed settlement.
 
 ## Next Live Steps
 

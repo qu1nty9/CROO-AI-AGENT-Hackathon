@@ -56,9 +56,11 @@ Status: working checklist.
 - Mock CAP batch Markdown: `artifacts/phase2/mock-cap-batch-summary.md`
 - Live readiness report: `artifacts/phase3/live-readiness-report.json`
 - Live dry-run audit: `artifacts/phase3/live-dry-run-audit.json`
+- CROO purchase attempt: `artifacts/phase3/croo-purchase-attempt.json`
 - Tests: `PYTHONPATH=src .venv/bin/python -m unittest discover -s tests`
 - All evidence: `PYTHONPATH=src .venv/bin/python examples/run_all_evidence.py`
 
 ## Current Live Blockers
 
+- wallet funding did not appear on the usable purchase balance
 - no live/staging order receipt yet
