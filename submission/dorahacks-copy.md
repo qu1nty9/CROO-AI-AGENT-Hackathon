@@ -71,8 +71,34 @@ https://github.com/qu1nty9/CROO-AI-AGENT-Hackathon
 
 ## Demo Video
 
-TBD
+Pending recording. The script and runbook are ready:
+
+- `submission/demo-script.md`
+- `submission/demo-runbook.md`
+
+Target length: under 5 minutes.
 
 ## Agent Store Listing
 
-TBD
+Metadata is prepared in `deployment/agent-store-listing.json`.
+
+Intended service:
+
+- Agent: `ProofMesh`
+- Service ID: `proofmesh-source-coverage-audit`
+- Service name: `Source Coverage Audit`
+- Price: `0.25 CROO` per audit
+- Require Fund Transfer: `false`
+- Provider agent ID: `0xc38d5FE5125F5ce901768b26941Bac8758aCD46e`
+
+Current status: live listing/order receipt is pending because the CROO wallet
+funding used for the purchase did not appear on the usable purchase balance.
+ProofMesh does not claim live settlement until a receipt is attached.
+
+## Judging Evidence
+
+- Final writeup: `writeup/kaggle-writeup.md`
+- Evidence map: `submission/evidence-map.md`
+- Architecture: `writeup/architecture.md`
+- Mini benchmark: `artifacts/benchmark/proofmesh-mini-benchmark.md`
+- Live readiness notes: `deployment/live-integration-notes.md`

@@ -83,7 +83,9 @@ class LiveCROOAdapter:
                 ],
             },
             "repository": PROOFMESH_REPOSITORY_URL,
-            "demo_video": "TBD",
+            "demo_video": None,
+            "demo_video_status": "pending_recording",
+            "listing_status": "metadata_prepared_live_listing_pending",
         }
 
     def check_readiness(self) -> ReadinessReport:

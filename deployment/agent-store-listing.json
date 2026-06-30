@@ -3,6 +3,7 @@
   "agent_id": "0xc38d5FE5125F5ce901768b26941Bac8758aCD46e",
   "service_id": "proofmesh-source-coverage-audit",
   "service_name": "Source Coverage Audit",
+  "listing_status": "metadata_prepared_live_listing_pending",
   "short_description": "Paid verification and provenance audit for agent-generated outputs.",
   "long_description": "ProofMesh is a CAP-callable verification agent. Requester agents can hire it before delivering generated reports, dataset summaries, or claim bundles. ProofMesh audits claims against supplied sources, flags unsupported or contradicted statements, returns confidence scores and limitations, and attaches CAP receipt metadata.",
   "tracks": [
@@ -41,5 +42,7 @@
     "High-stakes domains require domain-specific validation."
   ],
   "repository": "https://github.com/qu1nty9/CROO-AI-AGENT-Hackathon",
-  "demo_video": "TBD"
+  "demo_video": null,
+  "demo_video_status": "pending_recording",
+  "purchase_attempt_status": "wallet_funding_not_visible_no_order_receipt"
 }

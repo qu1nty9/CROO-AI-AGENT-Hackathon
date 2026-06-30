@@ -215,3 +215,19 @@ Remaining publishing tasks:
 - DoraHacks BUIDL
 - demo video
 - final Kaggle writeup publication
+
+## [2026-06-30] packaging | Pre-demo submission package
+
+Pushed the final local work to `origin/main` and tightened the public submission
+package before demo recording.
+
+Updated public-facing status language so unresolved external steps are explicit
+instead of appearing as unfinished placeholders:
+
+- GitHub repository is current.
+- Final Kaggle writeup is ready locally.
+- DoraHacks copy is ready for paste/submission.
+- Demo script and runbook are ready for recording.
+- Agent Store listing metadata is prepared.
+- Live CROO listing/order receipt remains pending because wallet funding did not
+  appear on the usable purchase balance.

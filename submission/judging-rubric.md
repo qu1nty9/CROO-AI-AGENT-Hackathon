@@ -5,15 +5,20 @@ This page tracks what a judge should be able to verify quickly.
 ## 1. Does It Satisfy The Required Submission Criteria?
 
 - [ ] Agent Store listing exists
-- [ ] CAP integration exists
-- [ ] Agent is callable
-- [ ] Settlement is shown or clearly documented
-- [ ] GitHub repo is public
-- [ ] Permissive license exists
-- [ ] README explains setup
-- [ ] SDK methods are documented
+  - Metadata is prepared; live listing/order receipt is pending.
+- [x] CAP integration exists
+- [x] Agent is callable
+- [x] Settlement is shown or clearly documented
+  - Mock CAP settlement is shown.
+  - Live CROO settlement is explicitly not claimed.
+- [x] GitHub repo is public
+- [x] Permissive license exists
+- [x] README explains setup
+- [x] SDK methods are documented
 - [ ] Demo video is under 5 minutes
+  - Script/runbook are ready; video still needs to be recorded.
 - [ ] DoraHacks BUIDL is complete
+  - Copy is ready; final submission still needs to be filed.
 
 ## 2. Is The Agent Actually Composable?
 
@@ -80,4 +85,3 @@ Weak evidence:
 - concise architecture diagram
 - polished README
 - honest limitations
-

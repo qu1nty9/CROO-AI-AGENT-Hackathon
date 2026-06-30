@@ -75,7 +75,9 @@
       ]
     },
     "repository": "https://github.com/qu1nty9/CROO-AI-AGENT-Hackathon",
-    "demo_video": "TBD"
+    "demo_video": null,
+    "demo_video_status": "pending_recording",
+    "listing_status": "metadata_prepared_live_listing_pending"
   },
   "next_steps": [
     "Run a staging/live negotiation and attach the transaction receipt to artifacts."

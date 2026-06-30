@@ -1,11 +1,17 @@
 # CROO Hackathon Submission Checklist
 
-Status: working checklist.
+Status: pre-demo submission package ready. Remaining items are external publishing
+or recording steps.
 
 ## Required By Brief
 
-- [ ] Agent listed on CROO Agent Store
+- [ ] Agent live-listed on CROO Agent Store
+  - Metadata is prepared in `deployment/agent-store-listing.json`.
+  - Live listing/order receipt is still pending because the wallet funding did
+    not appear on the usable purchase balance.
 - [x] CAP integration implemented
+  - Mock CAP lifecycle is implemented and reproducible.
+  - CROO SDK/staging provider scaffold is implemented.
 - [x] Agent is callable by other agents in mock CAP
 - [x] Settlement flow clearly documented as mock CAP
 - [x] Public GitHub repository
@@ -15,7 +21,10 @@ Status: working checklist.
 - [x] SDK methods used documented
 - [x] Integration notes documented
 - [ ] Demo video under 5 minutes
+  - Script and runbook are ready in `submission/demo-script.md` and
+    `submission/demo-runbook.md`.
 - [ ] DoraHacks BUIDL submitted
+  - Copy is ready in `submission/dorahacks-copy.md`.
 
 ## Recommended Extra Evidence
 
@@ -26,9 +35,11 @@ Status: working checklist.
 - [x] Pricing model
 - [x] Known limitations
 - [ ] Screenshots or transaction proof from live/staging CAP
+  - Purchase attempt is documented, but no order receipt exists yet.
 - [x] Kaggle writeup ready locally
   - `writeup/kaggle-writeup.md`
 - [ ] Kaggle writeup published
+  - Final local draft is ready for publication/paste.
 - [x] Evidence map
   - `submission/evidence-map.md`
 - [x] Demo runbook
@@ -68,3 +79,21 @@ Status: working checklist.
 
 - wallet funding did not appear on the usable purchase balance
 - no live/staging order receipt yet
+
+## Ready Before Demo Recording
+
+- Repository is public and pushed: https://github.com/qu1nty9/CROO-AI-AGENT-Hackathon
+- Final Kaggle writeup is ready locally: `writeup/kaggle-writeup.md`
+- Evidence map is ready: `submission/evidence-map.md`
+- DoraHacks submission copy is ready: `submission/dorahacks-copy.md`
+- Demo script and runbook are ready:
+  - `submission/demo-script.md`
+  - `submission/demo-runbook.md`
+- Agent Store listing metadata is ready: `deployment/agent-store-listing.json`
+
+## Manual/External Remaining
+
+- Record and upload the demo video.
+- Paste the final writeup into Kaggle/DoraHacks as required.
+- Submit the DoraHacks BUIDL.
+- Retry CROO purchase/listing once wallet funding appears on the usable balance.
